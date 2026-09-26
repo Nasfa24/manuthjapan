@@ -3,13 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW).">
-    <title>MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang</title>
+    <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW). Pusat pelatihan bahasa Jepang dan penempatan tenaga kerja di Surabaya.">
     
     <!-- ==========================================================================
-         GOOGLE ANALYTICS 4 (GA4) INTEGRATION
+         SECURITY META (Garis Pertahanan Pertama Frontend)
          ========================================================================== -->
-    <!-- Google tag (gtag.js) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/;">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- ==========================================================================
+         SEO, CANONICAL, OPEN GRAPH, & TWITTER CARDS (Full Preview Share)
+         ========================================================================== -->
+    <link rel="canonical" href="https://manuthjapan.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="MANUTH JAPAN - Solusi Kerja Resmi ke Jepang">
+    <meta property="og:description" content="Dapatkan gaji puluhan juta! Kami urus pelatihan N5-N4, sertifikasi SSW, hingga penempatan kerja.">
+    <meta property="og:image" content="https://manuthjapan.com/berita 1.png">
+    <meta property="og:url" content="https://manuthjapan.com/">
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MANUTH JAPAN - Solusi Kerja Resmi ke Jepang">
+    <meta name="twitter:description" content="Dapatkan gaji puluhan juta! Kami urus pelatihan N5-N4, sertifikasi SSW, hingga penempatan kerja.">
+    <meta name="twitter:image" content="https://manuthjapan.com/berita 1.png">
+    <title>MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang</title>
+    
+    <!-- FAVICON -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+    <link rel="apple-touch-icon" href="favicon-512.png">
+    
+    <!-- Google Fonts (Dioptimasi untuk performa / Non-Render Blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"></noscript>
+    
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <!-- LOCAL BUSINESS SCHEMA -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "MANUTH JAPAN",
+      "url": "https://manuthjapan.com",
+      "logo": "https://manuthjapan.com/logo 1.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-81-339-760-265",
+        "contactType": "customer service"
+      },
+      "address": [
+        { "@type": "PostalAddress", "streetAddress": "Jl. Pandugo No. 16", "addressLocality": "Surabaya", "addressRegion": "Jawa Timur", "addressCountry": "ID" },
+        { "@type": "PostalAddress", "streetAddress": "Jl. Ketintang Madya No. 140", "addressLocality": "Surabaya", "addressRegion": "Jawa Timur", "addressCountry": "ID" }
+      ]
+    }
+    </script>
+
+    <!-- GA4 EVENT TRACKING -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y0240JSRR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -17,30 +70,12 @@
       gtag('js', new Date());
       gtag('config', 'G-8Y0240JSRR');
     </script>
-    
-    <!-- ==========================================================================
-         FAVICON & APP ICONS (IDENTITY SETUP)
-         ========================================================================== -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
-    <link rel="apple-touch-icon" href="favicon-512.png">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
     <style>
         /* ==========================================================================
            1. VARIABEL & RESET
            ========================================================================== */
-        :root {
-            --deep-indigo: #0A2540; --sakura-pink: #FF8DA1; --warm-gold: #FFB703;
-            --clean-slate: #FFFFFF; --soft-ice-blue: #E0F7FA; --slate-grey: #94A3B8;
-        }
+        :root { --deep-indigo: #0A2540; --sakura-pink: #FF8DA1; --warm-gold: #FFB703; --clean-slate: #FFFFFF; --soft-ice-blue: #E0F7FA; --slate-grey: #94A3B8; }
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; scroll-behavior: smooth; }
         body { background-color: var(--clean-slate); color: var(--deep-indigo); line-height: 1.6; overflow-x: hidden; }
 
@@ -150,7 +185,56 @@
         @media (max-width: 992px) { .news-editorial-layout { grid-template-columns: 1fr; } .news-side { flex-direction: column; } .news-side .news-img { width: 100%; height: 200px; border-right: none; border-bottom: 4px solid var(--sakura-pink); } .news-side .news-body { width: 100%; } }
 
         /* ==========================================================================
-           8. FLOATING WHATSAPP BUTTON (PULSE ANIMATION)
+           8. SWEETALERT2 CUSTOM FORM STYLING (BOIL THE OCEAN UPGRADE)
+           ========================================================================== */
+        .swal2-popup { border-radius: 20px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; }
+        .swal2-title { color: var(--deep-indigo) !important; font-family: 'Montserrat', sans-serif !important; font-weight: 800 !important; font-size: 26px !important; padding-top: 15px !important; }
+        .swal2-html-container { font-family: 'Montserrat', sans-serif !important; }
+        
+        /* Container Form Responsif */
+        .swal-form-container { text-align: left; max-width: 100%; margin: 0 auto; padding: 10px; }
+        
+        /* Label Input Jelas dan Tegas */
+        .swal-form-label { font-weight: 700; font-size: 14px; color: var(--deep-indigo); margin-bottom: 8px; display: block; }
+        
+        /* Input Box High-Contrast */
+        .custom-swal-input {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 0 20px 0 !important;
+            padding: 16px 20px !important;
+            font-size: 16px !important;
+            font-weight: 600 !important;
+            color: var(--deep-indigo) !important;
+            background-color: var(--clean-slate) !important;
+            border: 2px solid var(--slate-grey) !important;
+            border-radius: 8px !important;
+            box-sizing: border-box !important;
+            transition: all 0.3s ease !important;
+            box-shadow: none !important;
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        .custom-swal-input::placeholder { color: #94A3B8 !important; font-weight: 400 !important; opacity: 0.9 !important; }
+        .custom-swal-input:focus {
+            outline: none !important;
+            border-color: var(--sakura-pink) !important;
+            box-shadow: 0 0 0 4px rgba(255, 141, 161, 0.2) !important;
+        }
+        
+        /* Kotak Privasi / Legal (Mudah dibaca) */
+        .swal-legal-box {
+            background-color: var(--soft-ice-blue);
+            border: 1px solid #BFEBF3;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+        .swal-legal-text {
+            font-size: 12px; color: #475569; line-height: 1.6; margin: 0; font-weight: 500;
+        }
+
+        /* ==========================================================================
+           9. FLOATING WHATSAPP BUTTON (PULSE ANIMATION)
            ========================================================================== */
         .floating-wa { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background-color: #25D366; color: #FFF; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); z-index: 9999; text-decoration: none; transition: transform 0.3s ease; }
         .floating-wa:hover { transform: scale(1.1) translateY(-5px); }
@@ -159,7 +243,7 @@
         @keyframes pulse-animation { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(1.6); opacity: 0; } }
 
         /* ==========================================================================
-           9. HIDDEN CRM DASHBOARD OVERLAY (PINTU RAHASIA)
+           10. HIDDEN CRM DASHBOARD OVERLAY (PINTU RAHASIA)
            ========================================================================== */
         .crm-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--soft-ice-blue); z-index: 10000; overflow-y: auto; padding: 40px 5%; display: none; }
         .crm-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; max-width: 1200px; margin-left: auto; margin-right: auto; }
@@ -177,7 +261,7 @@
         .btn-check:hover { background: #25D366; }
 
         /* ==========================================================================
-           10. ELEMEN PENDUKUNG LAINNYA & FOOTER
+           11. ELEMEN PENDUKUNG LAINNYA & FOOTER
            ========================================================================== */
         .step-number { background-color: var(--deep-indigo); color: var(--clean-slate); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-weight: 800; font-size: 20px; margin: 0 auto 20px auto; box-shadow: 0 4px 10px rgba(10, 37, 64, 0.2); }
         .highlight-tag { display: inline-block; background-color: var(--warm-gold); color: var(--deep-indigo); font-weight: 800; padding: 10px 20px; border-radius: 30px; font-size: 14px; margin-top: auto; box-shadow: 0 4px 10px rgba(255, 183, 3, 0.3); }
@@ -195,202 +279,199 @@
         .footer-logo:hover { transform: scale(1.05); box-shadow: 0 12px 30px rgba(255, 141, 161, 0.5); }
         footer p { opacity: 0.7; font-size: 14px; margin-bottom: 5px;}
         .legal-text { font-size: 12px; color: var(--slate-grey); margin-top: 15px; }
+        .legal-text a { color: var(--sakura-pink); text-decoration: none; font-weight: bold; }
+        .legal-text a:hover { text-decoration: underline; }
 
         .swal-wide { width: 800px !important; }
         .swal-article-text { text-align: left !important; font-size: 16px; line-height: 1.8; color: var(--deep-indigo); padding-top: 15px;}
         .swal-article-text p { margin-bottom: 20px; }
         .swal-article-img { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         .swal-article-contact { background: var(--soft-ice-blue); padding: 20px; border-radius: 12px; font-weight: 600; font-size: 14px; border-left: 4px solid var(--sakura-pink); }
-        .swal2-popup { border-radius: 16px !important; }
-        .swal2-title { color: var(--deep-indigo) !important; font-family: 'Montserrat', sans-serif !important; }
-        .swal2-html-container { font-family: 'Montserrat', sans-serif !important; }
     </style>
 </head>
 <body>
+    <main>
+        <!-- NAVBAR & HERO -->
+        <nav class="navbar">
+            <a href="#" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.png" alt="Logo MANUTH JAPAN"></a>
+            <a href="#lead-magnet" class="btn-cta" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Nav Bar CTA' });">Belajar Gratis</a>
+        </nav>
 
-    <!-- NAVBAR & HERO -->
-    <nav class="navbar">
-        <a href="#" class="logo"><img src="logo 1.png" alt="Logo MANUTH JAPAN"></a>
-        <!-- EVENT GA4: Pelacakan klik CTA navigasi -->
-        <a href="#lead-magnet" class="btn-cta" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Nav Bar CTA' });">Belajar Gratis</a>
-    </nav>
+        <section class="hero">
+            <h1>LOWONGAN KERJA RESMI KE JEPANG!</h1>
+            <p>Ubah masa depan Anda melalui program Visa Magang & Tokutei Ginou (SSW). Proses transparan, pelatihan intensif, dan penempatan kerja pasti.</p>
+            <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
+        </section>
 
-    <section class="hero">
-        <h1>LOWONGAN KERJA RESMI KE JEPANG!</h1>
-        <p>Ubah masa depan Anda melalui program Visa Magang & Tokutei Ginou (SSW). Proses transparan, pelatihan intensif, dan penempatan kerja pasti.</p>
-        <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
-    </section>
-
-    <!-- ALUR KEBERANGKATAN -->
-    <section class="section-container bg-langkah">
-        <h2 class="section-title">6 Langkah Menuju Jepang</h2>
-        <div class="grid-cards">
-            <div class="card"><div class="step-number">1</div><h3>Pendaftaran & Konsultasi</h3><p>Memilih program kerja yang paling sesuai dengan kualifikasi dan minat Anda.</p></div>
-            <div class="card"><div class="step-number">2</div><h3>Belajar N5 - N4</h3><p>Pelatihan bahasa Jepang intensif dari nol hingga tingkat menengah.</p></div>
-            <div class="card"><div class="step-number">3</div><h3>Ujian Sertifikasi</h3><p>Mengikuti ujian JFT/JLPT serta Skill Test resmi untuk persyaratan visa.</p></div>
-            <div class="card"><div class="step-number">4</div><h3>Job Matching</h3><p>Wawancara (Mensetsu) langsung dengan pihak perusahaan (User) dari Jepang.</p></div>
-            <div class="card"><div class="step-number">5</div><h3>Medical Check-up & CoE</h3><p>Pemeriksaan kesehatan akhir dan pengurusan Certificate of Eligibility.</p></div>
-            <div class="card"><div class="step-number">6</div><h3>Terbang ke Jepang</h3><p>Pembekalan akhir, penandatanganan kontrak, dan keberangkatan.</p></div>
-        </div>
-    </section>
-
-    <!-- PROGRAM UNGGULAN -->
-    <section class="section-container bg-program" id="program">
-        <h2 class="section-title">Program Unggulan Kami</h2>
-        <p class="section-subtitle">Pilih jalur keberangkatan yang sesuai dengan kualifikasi Anda.</p>
-        <div class="program-accordion-container">
-            <div class="prog-item"><div class="prog-content"><h3>Tokutei Ginou (SSW)</h3><div class="prog-details"><p>Visa pekerja keahlian spesifik dengan fasilitas dan standar gaji yang setara dengan warga negara Jepang lokal.</p><div class="highlight-tag">Gaji: Rp 18 - 24 Juta / bulan</div></div></div></div>
-            <div class="prog-item"><div class="prog-content"><h3>Visa Magang</h3><div class="prog-details"><p>Program pemagangan teknis sambil bekerja untuk meningkatkan keterampilan industri dan etos kerja.</p><div class="highlight-tag" style="background-color: var(--sakura-pink); color: white;">Gaji: Rp 10 - 15 Juta / bulan</div></div></div></div>
-            <div class="prog-item"><div class="prog-content"><h3>Job Matching</h3><div class="prog-details"><p>Layanan pencocokan khusus bagi kandidat yang sudah memiliki sertifikat bahasa dan skill untuk wawancara langsung.</p><div class="highlight-tag" style="background-color: #48CAE4;">Penempatan Kerja Cepat</div></div></div></div>
-        </div>
-    </section>
-
-    <!-- BIDANG KERJA -->
-    <section class="section-container">
-        <h2 class="section-title">Bidang Kerja Tersedia</h2>
-        <div class="grid-cards">
-            <div class="card card-kerja card-makanan"><h3>Pengolahan Makanan</h3><p>Pabrik makanan siap saji, roti, dan bento.</p></div>
-            <div class="card card-kerja card-perhotelan"><h3>Perhotelan & Pariwisata</h3><p>Resepsionis, layanan kamar, dan operasional hotel.</p></div>
-            <div class="card card-kerja card-manufaktur"><h3>Manufaktur & Pabrik</h3><p>Perakitan komponen, plastik, dan permesinan.</p></div>
-            <div class="card card-kerja card-pertanian"><h3>Pertanian & Peternakan</h3><p>Budidaya tanaman, panen, dan perawatan hewan ternak.</p></div>
-            <div class="card card-kerja card-keperawatan"><h3>Keperawatan (Kaigo)</h3><p>Merawat lansia di panti jompo (Gaji tertinggi + Bonus).</p></div>
-            <div class="card card-kerja card-konstruksi"><h3>Konstruksi</h3><p>Pembangunan infrastruktur, sipil, dan alat berat.</p></div>
-        </div>
-    </section>
-
-    <!-- TRANSPARANSI FINANSIAL -->
-    <section class="section-container bg-finansial">
-        <h2 class="section-title">Transparansi Finansial</h2>
-        <p class="section-subtitle">Simulasi Potensi Pendapatan & Pengeluaran (Berdasarkan Rata-rata Tokutei Ginou)</p>
-        <div class="financial-box">
-            <div class="fin-row"><span>Pendapatan Kotor (Gaji Pokok)</span><strong>± Rp 20.000.000</strong></div>
-            <div class="fin-row"><span>Pajak & Asuransi (Dipotong Perusahaan)</span><strong>- Rp 3.500.000</strong></div>
-            <div class="fin-row"><span>Akomodasi (Apartemen/Asrama)</span><strong>- Rp 2.500.000</strong></div>
-            <div class="fin-row"><span>Biaya Hidup (Makan, Transport, Utilitas)</span><strong>- Rp 4.000.000</strong></div>
-            <div class="fin-total">Potensi Tabungan Bersih: Rp 10.000.000 / Bulan</div>
-        </div>
-    </section>
-
-    <!-- SOCIAL PROOF & STATS -->
-    <section class="section-container">
-        <div class="stats-container">
-            <div class="stat-item"><div class="stat-number">1,000+</div><div class="stat-label">Kandidat Terdaftar</div></div>
-            <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Mitra Perusahaan Jepang</div></div>
-            <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Pendampingan Resmi</div></div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIAL MARQUEE -->
-    <section class="testimonial-section">
-        <h2 class="section-title">Kisah Sukses Mereka</h2>
-        <p class="section-subtitle">Ribuan kandidat telah membuktikan keberhasilan program kami.</p>
-        <div class="marquee-container">
-            <div class="marquee-track">
-                <!-- GRUP A -->
-                <div class="testi-card"><div class="testi-header"><img src="testi 1.png" alt="Rohman" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 2.png" alt="Fahri" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 3.png" alt="Sugiyanto" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sugiyanto</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lulus SSW dan kerja pakai visa Tokutei Ginou. Gajinya mantap, bisa nabung banyak."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 4.png" alt="Syarief" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Syarief</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Ikut jalur magang, cuma 3 bulan belajar langsung siap berangkat. Makasih Manuth!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 5.png" alt="Haidar Fahmi" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Haidar Fahmi</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Kelas bahasa Jepangnya seru! Tutornya sabar membimbing dari N5 sampai lulus N4."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 6.png" alt="Ariyanto" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Ariyanto</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Punya sertifikat N4 langsung dibantu job matching. Sekarang kerja di perhotelan!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 7.png" alt="Subekti" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Subekti</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Impian kerja jadi Caregiver di Jepang terwujud berkat Manuth Japan. Layanannya top!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 8.png" alt="Nanik" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Nanik</h4><span>Jember, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Tempat belajarnya di Surabaya sangat nyaman. Biaya pelatihannya juga terjangkau."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 9.png" alt="Sindi" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sindi</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Senang banget bisa lolos kerja di pabrik makanan Jepang. Dokumen diurus tuntas!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 10.png" alt="Silvy" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Silvy</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lembaga resmi dan terpercaya. Nggak nyesel daftar di Manuth Japan, sukses selalu!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 11.png" alt="Andik" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Andik</h4><span>Probolinggo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Gaji bersih dan rincian biaya hidup sesuai info brosur. Bisa nabung puluhan juta!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 12.png" alt="Mahendra" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Mahendra</h4><span>Surabaya, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Awalnya ikut trial class, ternyata cocok. Langsung lanjut sampai terbang ke Jepang!"</div></div>
-                <!-- GRUP B (CLONE) -->
-                <div class="testi-card"><div class="testi-header"><img src="testi 1.png" alt="Rohman" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 2.png" alt="Fahri" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 3.png" alt="Sugiyanto" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sugiyanto</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lulus SSW dan kerja pakai visa Tokutei Ginou. Gajinya mantap, bisa nabung banyak."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 4.png" alt="Syarief" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Syarief</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Ikut jalur magang, cuma 3 bulan belajar langsung siap berangkat. Makasih Manuth!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 5.png" alt="Haidar Fahmi" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Haidar Fahmi</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Kelas bahasa Jepangnya seru! Tutornya sabar membimbing dari N5 sampai lulus N4."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 6.png" alt="Ariyanto" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Ariyanto</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Punya sertifikat N4 langsung dibantu job matching. Sekarang kerja di perhotelan!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 7.png" alt="Subekti" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Subekti</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Impian kerja jadi Caregiver di Jepang terwujud berkat Manuth Japan. Layanannya top!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 8.png" alt="Nanik" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Nanik</h4><span>Jember, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Tempat belajarnya di Surabaya sangat nyaman. Biaya pelatihannya juga terjangkau."</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 9.png" alt="Sindi" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sindi</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Senang banget bisa lolos kerja di pabrik makanan Jepang. Dokumen diurus tuntas!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 10.png" alt="Silvy" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Silvy</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lembaga resmi dan terpercaya. Nggak nyesel daftar di Manuth Japan, sukses selalu!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 11.png" alt="Andik" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Andik</h4><span>Probolinggo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Gaji bersih dan rincian biaya hidup sesuai info brosur. Bisa nabung puluhan juta!"</div></div>
-                <div class="testi-card"><div class="testi-header"><img src="testi 12.png" alt="Mahendra" class="testi-avatar" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Mahendra</h4><span>Surabaya, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Awalnya ikut trial class, ternyata cocok. Langsung lanjut sampai terbang ke Jepang!"</div></div>
+        <!-- ALUR KEBERANGKATAN -->
+        <section class="section-container bg-langkah">
+            <h2 class="section-title">6 Langkah Menuju Jepang</h2>
+            <div class="grid-cards">
+                <div class="card"><div class="step-number">1</div><h3>Pendaftaran & Konsultasi</h3><p>Memilih program kerja yang paling sesuai dengan kualifikasi dan minat Anda.</p></div>
+                <div class="card"><div class="step-number">2</div><h3>Belajar N5 - N4</h3><p>Pelatihan bahasa Jepang intensif dari nol hingga tingkat menengah.</p></div>
+                <div class="card"><div class="step-number">3</div><h3>Ujian Sertifikasi</h3><p>Mengikuti ujian JFT/JLPT serta Skill Test resmi untuk persyaratan visa.</p></div>
+                <div class="card"><div class="step-number">4</div><h3>Job Matching</h3><p>Wawancara (Mensetsu) langsung dengan pihak perusahaan (User) dari Jepang.</p></div>
+                <div class="card"><div class="step-number">5</div><h3>Medical Check-up & CoE</h3><p>Pemeriksaan kesehatan akhir dan pengurusan Certificate of Eligibility.</p></div>
+                <div class="card"><div class="step-number">6</div><h3>Terbang ke Jepang</h3><p>Pembekalan akhir, penandatanganan kontrak, dan keberangkatan.</p></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- NEWS & ARTICLE -->
-    <section class="section-container">
-        <h2 class="section-title">News & Article</h2>
-        <p class="section-subtitle">Pembaruan resmi dan informasi terkini dari MANUTH JAPAN.</p>
-        <div class="news-editorial-layout">
-            <div class="news-card news-main" onclick="bukaArtikel(1)">
-                <img src="berita 1.png" alt="Berita 1" class="news-img" onerror="this.src='https://via.placeholder.com/800x400'">
-                <div class="news-body">
-                    <span class="news-tag">Press Release</span>
-                    <h3 class="news-title">MANUTH JAPAN Umumkan Rebranding, Perkuat Posisi Solusi Terpadu Kerja Jepang</h3>
-                    <p class="news-snippet">Langkah strategis ini mencakup pengenalan identitas visual baru dan enam alur fasilitasi keberangkatan untuk efisiensi penempatan tenaga kerja.</p>
-                    <span class="read-more">Baca Selengkapnya &rarr;</span>
+        <!-- PROGRAM UNGGULAN -->
+        <section class="section-container bg-program" id="program">
+            <h2 class="section-title">Program Unggulan Kami</h2>
+            <p class="section-subtitle">Pilih jalur keberangkatan yang sesuai dengan kualifikasi Anda.</p>
+            <div class="program-accordion-container">
+                <div class="prog-item"><div class="prog-content"><h3>Tokutei Ginou (SSW)</h3><div class="prog-details"><p>Visa pekerja keahlian spesifik dengan fasilitas dan standar gaji yang setara dengan warga negara Jepang lokal.</p><div class="highlight-tag">Gaji: Rp 18 - 24 Juta / bulan</div></div></div></div>
+                <div class="prog-item"><div class="prog-content"><h3>Visa Magang</h3><div class="prog-details"><p>Program pemagangan teknis sambil bekerja untuk meningkatkan keterampilan industri dan etos kerja.</p><div class="highlight-tag" style="background-color: var(--sakura-pink); color: white;">Gaji: Rp 10 - 15 Juta / bulan</div></div></div></div>
+                <div class="prog-item"><div class="prog-content"><h3>Job Matching</h3><div class="prog-details"><p>Layanan pencocokan khusus bagi kandidat yang sudah memiliki sertifikat bahasa dan skill untuk wawancara langsung.</p><div class="highlight-tag" style="background-color: #48CAE4;">Penempatan Kerja Cepat</div></div></div></div>
+            </div>
+        </section>
+
+        <!-- BIDANG KERJA -->
+        <section class="section-container">
+            <h2 class="section-title">Bidang Kerja Tersedia</h2>
+            <div class="grid-cards">
+                <div class="card card-kerja card-makanan"><h3>Pengolahan Makanan</h3><p>Pabrik makanan siap saji, roti, dan bento.</p></div>
+                <div class="card card-kerja card-perhotelan"><h3>Perhotelan & Pariwisata</h3><p>Resepsionis, layanan kamar, dan operasional hotel.</p></div>
+                <div class="card card-kerja card-manufaktur"><h3>Manufaktur & Pabrik</h3><p>Perakitan komponen, plastik, dan permesinan.</p></div>
+                <div class="card card-kerja card-pertanian"><h3>Pertanian & Peternakan</h3><p>Budidaya tanaman, panen, dan perawatan hewan ternak.</p></div>
+                <div class="card card-kerja card-keperawatan"><h3>Keperawatan (Kaigo)</h3><p>Merawat lansia di panti jompo (Gaji tertinggi + Bonus).</p></div>
+                <div class="card card-kerja card-konstruksi"><h3>Konstruksi</h3><p>Pembangunan infrastruktur, sipil, dan alat berat.</p></div>
+            </div>
+        </section>
+
+        <!-- TRANSPARANSI FINANSIAL -->
+        <section class="section-container bg-finansial">
+            <h2 class="section-title">Transparansi Finansial</h2>
+            <p class="section-subtitle">Simulasi Potensi Pendapatan & Pengeluaran (Berdasarkan Rata-rata Tokutei Ginou)</p>
+            <div class="financial-box">
+                <div class="fin-row"><span>Pendapatan Kotor (Gaji Pokok)</span><strong>± Rp 20.000.000</strong></div>
+                <div class="fin-row"><span>Pajak & Asuransi (Dipotong Perusahaan)</span><strong>- Rp 3.500.000</strong></div>
+                <div class="fin-row"><span>Akomodasi (Apartemen/Asrama)</span><strong>- Rp 2.500.000</strong></div>
+                <div class="fin-row"><span>Biaya Hidup (Makan, Transport, Utilitas)</span><strong>- Rp 4.000.000</strong></div>
+                <div class="fin-total">Potensi Tabungan Bersih: Rp 10.000.000 / Bulan</div>
+            </div>
+        </section>
+
+        <!-- SOCIAL PROOF & STATS -->
+        <section class="section-container">
+            <div class="stats-container">
+                <div class="stat-item"><div class="stat-number">1,000+</div><div class="stat-label">Kandidat Terdaftar</div></div>
+                <div class="stat-item"><div class="stat-number">30+</div><div class="stat-label">Mitra Perusahaan Jepang</div></div>
+                <div class="stat-item"><div class="stat-number">100%</div><div class="stat-label">Pendampingan Resmi</div></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL MARQUEE -->
+        <section class="testimonial-section">
+            <h2 class="section-title">Kisah Sukses Mereka</h2>
+            <p class="section-subtitle">Ribuan kandidat telah membuktikan keberhasilan program kami.</p>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <!-- GRUP A -->
+                    <div class="testi-card"><div class="testi-header"><img src="testi 1.png" alt="Rohman" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 2.png" alt="Fahri" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 3.png" alt="Sugiyanto" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sugiyanto</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lulus SSW dan kerja pakai visa Tokutei Ginou. Gajinya mantap, bisa nabung banyak."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 4.png" alt="Syarief" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Syarief</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Ikut jalur magang, cuma 3 bulan belajar langsung siap berangkat. Makasih Manuth!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 5.png" alt="Haidar Fahmi" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Haidar Fahmi</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Kelas bahasa Jepangnya seru! Tutornya sabar membimbing dari N5 sampai lulus N4."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 6.png" alt="Ariyanto" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Ariyanto</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Punya sertifikat N4 langsung dibantu job matching. Sekarang kerja di perhotelan!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 7.png" alt="Subekti" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Subekti</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Impian kerja jadi Caregiver di Jepang terwujud berkat Manuth Japan. Layanannya top!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 8.png" alt="Nanik" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Nanik</h4><span>Jember, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Tempat belajarnya di Surabaya sangat nyaman. Biaya pelatihannya juga terjangkau."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 9.png" alt="Sindi" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sindi</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Senang banget bisa lolos kerja di pabrik makanan Jepang. Dokumen diurus tuntas!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 10.png" alt="Silvy" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Silvy</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lembaga resmi dan terpercaya. Nggak nyesel daftar di Manuth Japan, sukses selalu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 11.png" alt="Andik" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Andik</h4><span>Probolinggo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Gaji bersih dan rincian biaya hidup sesuai info brosur. Bisa nabung puluhan juta!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 12.png" alt="Mahendra" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Mahendra</h4><span>Surabaya, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Awalnya ikut trial class, ternyata cocok. Langsung lanjut sampai terbang ke Jepang!"</div></div>
+                    <!-- GRUP B (CLONE) -->
+                    <div class="testi-card"><div class="testi-header"><img src="testi 1.png" alt="Rohman" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 2.png" alt="Fahri" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 3.png" alt="Sugiyanto" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sugiyanto</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lulus SSW dan kerja pakai visa Tokutei Ginou. Gajinya mantap, bisa nabung banyak."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 4.png" alt="Syarief" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Syarief</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Ikut jalur magang, cuma 3 bulan belajar langsung siap berangkat. Makasih Manuth!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 5.png" alt="Haidar Fahmi" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Haidar Fahmi</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Kelas bahasa Jepangnya seru! Tutornya sabar membimbing dari N5 sampai lulus N4."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 6.png" alt="Ariyanto" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Ariyanto</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Punya sertifikat N4 langsung dibantu job matching. Sekarang kerja di perhotelan!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 7.png" alt="Subekti" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Subekti</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Impian kerja jadi Caregiver di Jepang terwujud berkat Manuth Japan. Layanannya top!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 8.png" alt="Nanik" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Nanik</h4><span>Jember, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Tempat belajarnya di Surabaya sangat nyaman. Biaya pelatihannya juga terjangkau."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 9.png" alt="Sindi" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sindi</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Senang banget bisa lolos kerja di pabrik makanan Jepang. Dokumen diurus tuntas!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 10.png" alt="Silvy" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Silvy</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lembaga resmi dan terpercaya. Nggak nyesel daftar di Manuth Japan, sukses selalu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 11.png" alt="Andik" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Andik</h4><span>Probolinggo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Gaji bersih dan rincian biaya hidup sesuai info brosur. Bisa nabung puluhan juta!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 12.png" alt="Mahendra" class="testi-avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Mahendra</h4><span>Surabaya, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Awalnya ikut trial class, ternyata cocok. Langsung lanjut sampai terbang ke Jepang!"</div></div>
                 </div>
             </div>
-            <div class="news-side-stack">
-                <div class="news-card news-side" onclick="bukaArtikel(2)">
-                    <img src="berita 2.png" alt="Berita 2" class="news-img" onerror="this.src='https://via.placeholder.com/400x400'">
+        </section>
+
+        <!-- NEWS & ARTICLE -->
+        <section class="section-container">
+            <h2 class="section-title">News & Article</h2>
+            <p class="section-subtitle">Pembaruan resmi dan informasi terkini dari MANUTH JAPAN.</p>
+            <div class="news-editorial-layout">
+                <div class="news-card news-main" onclick="bukaArtikel(1)" role="button" tabindex="0" aria-label="Baca Artikel MANUTH JAPAN Umumkan Rebranding">
+                    <img src="berita 1.png" alt="Ilustrasi Rebranding Manuth Japan" class="news-img" loading="lazy" onerror="this.src='https://via.placeholder.com/800x400'">
                     <div class="news-body">
-                        <span class="news-tag">Program Resmi</span>
-                        <h3 class="news-title">Buka Pendaftaran SSW, Bidik Kuota 850.000 Pekerja</h3>
-                        <p class="news-snippet">Lulusan SMA/SMK berpeluang mendapatkan gaji hingga Rp24 juta per bulan dengan hak setara pekerja lokal.</p>
+                        <span class="news-tag">Press Release</span>
+                        <h3 class="news-title">MANUTH JAPAN Umumkan Rebranding, Perkuat Posisi Solusi Terpadu Kerja Jepang</h3>
+                        <p class="news-snippet">Langkah strategis ini mencakup pengenalan identitas visual baru dan enam alur fasilitasi keberangkatan untuk efisiensi penempatan tenaga kerja.</p>
                         <span class="read-more">Baca Selengkapnya &rarr;</span>
                     </div>
                 </div>
-                <div class="news-card news-side" onclick="bukaArtikel(3)">
-                    <img src="berita 3.png" alt="Berita 3" class="news-img" onerror="this.src='https://via.placeholder.com/400x400'">
-                    <div class="news-body">
-                        <span class="news-tag">Inovasi Layanan</span>
-                        <h3 class="news-title">Jalur Cepat Magang Jepang Bergaji Belasan Juta</h3>
-                        <p class="news-snippet">Program Ginou Jishusei tanpa syarat sertifikat bahasa menargetkan lulusan SMA/SMK untuk percepatan serapan kerja.</p>
-                        <span class="read-more">Baca Selengkapnya &rarr;</span>
+                <div class="news-side-stack">
+                    <div class="news-card news-side" onclick="bukaArtikel(2)" role="button" tabindex="0" aria-label="Baca Artikel Pendaftaran SSW">
+                        <img src="berita 2.png" alt="Ilustrasi Pendaftaran SSW" class="news-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
+                        <div class="news-body">
+                            <span class="news-tag">Program Resmi</span>
+                            <h3 class="news-title">Buka Pendaftaran SSW, Bidik Kuota 850.000 Pekerja</h3>
+                            <p class="news-snippet">Lulusan SMA/SMK berpeluang mendapatkan gaji hingga Rp24 juta per bulan dengan hak setara pekerja lokal.</p>
+                            <span class="read-more">Baca Selengkapnya &rarr;</span>
+                        </div>
+                    </div>
+                    <div class="news-card news-side" onclick="bukaArtikel(3)" role="button" tabindex="0" aria-label="Baca Artikel Magang Jepang">
+                        <img src="berita 3.png" alt="Ilustrasi Magang Jepang" class="news-img" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
+                        <div class="news-body">
+                            <span class="news-tag">Inovasi Layanan</span>
+                            <h3 class="news-title">Jalur Cepat Magang Jepang Bergaji Belasan Juta</h3>
+                            <p class="news-snippet">Program Ginou Jishusei tanpa syarat sertifikat bahasa menargetkan lulusan SMA/SMK untuk percepatan serapan kerja.</p>
+                            <span class="read-more">Baca Selengkapnya &rarr;</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- LEAD MAGNET (GATED CONTENT) -->
-    <section class="section-container bg-light-blue" id="lead-magnet">
-        <h2 class="section-title">Mulai Perjalanan Anda Gratis!</h2>
-        <p class="section-subtitle">Akses materi premium dan aplikasi interaktif kami sebelum Anda memutuskan mendaftar.</p>
-        <div class="grid-cards" style="max-width: 800px;" id="lead-magnet-cards">
-            <div class="card" style="border-top-color: var(--warm-gold); background-color: var(--clean-slate);">
-                <h3>Apps "Belajar Jepang"</h3>
-                <p>Aplikasi interaktif pengenalan huruf Hiragana & Katakana berbasis web.</p>
-                <button class="btn-cta" onclick="triggerLeadMagnet('apps')">Buka Apps</button>
+        <!-- LEAD MAGNET (GATED CONTENT) -->
+        <section class="section-container bg-light-blue" id="lead-magnet">
+            <h2 class="section-title">Mulai Perjalanan Anda Gratis!</h2>
+            <p class="section-subtitle">Akses materi premium dan aplikasi interaktif kami sebelum Anda memutuskan mendaftar.</p>
+            <div class="grid-cards" style="max-width: 800px;" id="lead-magnet-cards">
+                <div class="card" style="border-top-color: var(--warm-gold); background-color: var(--clean-slate);">
+                    <h3>Apps "Belajar Jepang"</h3>
+                    <p>Aplikasi interaktif pengenalan huruf Hiragana & Katakana berbasis web.</p>
+                    <button class="btn-cta" onclick="triggerLeadMagnet('apps')" aria-label="Buka Aplikasi Belajar Jepang">Buka Apps</button>
+                </div>
+                <div class="card" style="background-color: var(--clean-slate);">
+                    <h3>Kumpulan Materi Premium</h3>
+                    <p>Modul saku PDF, panduan wawancara, dan bocoran soal JLPT N5.</p>
+                    <button class="btn-cta" onclick="triggerLeadMagnet('materi')" aria-label="Buka Kumpulan Materi Premium">Akses Materi</button>
+                </div>
             </div>
-            <div class="card" style="background-color: var(--clean-slate);">
-                <h3>Kumpulan Materi Premium</h3>
-                <p>Modul saku PDF, panduan wawancara, dan bocoran soal JLPT N5.</p>
-                <button class="btn-cta" onclick="triggerLeadMagnet('materi')">Akses Materi</button>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- FOOTER & HIDDEN CRM TRIGGER -->
     <footer>
-        <img src="logo 1.png" alt="MANUTH JAPAN Logo" class="footer-logo" id="secret-trigger">
+        <img src="logo 1.png" alt="Tombol Dasbor Internal MANUTH JAPAN" class="footer-logo" id="secret-trigger" loading="lazy" tabindex="0" role="button" aria-label="Buka Dasbor Rahasia">
         <p>Jl. Pandugo No. 16 | Jl. Ketintang Madya No. 140, Surabaya</p>
         <p>&copy; 2026 MANUTH JAPAN. All Rights Reserved.</p>
-        <p class="legal-text">Lembaga Pelatihan Kerja Resmi. Data Anda dilindungi oleh kebijakan privasi kami.</p>
+        <p class="legal-text">Lembaga Pelatihan Kerja Resmi. Data Anda dilindungi oleh <a href="privacy-policy.html">Kebijakan Privasi</a> kami.</p>
     </footer>
 
     <!-- FLOATING WHATSAPP BUTTON -->
-    <!-- EVENT GA4: Pelacakan klik tombol WhatsApp Mengambang -->
-    <a href="https://wa.me/6281339760265?text=Halo%20MANUTH%20JAPAN,%20saya%20ingin%20konsultasi%20program%20kerja%20ke%20Jepang." class="floating-wa" target="_blank" rel="noopener noreferrer" onclick="gtag('event', 'click', { 'event_category': 'whatsapp', 'event_label': 'Floating WA Button' });">
+    <a href="https://wa.me/6281339760265?text=Halo%20MANUTH%20JAPAN,%20saya%20ingin%20konsultasi%20program%20kerja%20ke%20Jepang." class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Admin MANUTH JAPAN via WhatsApp" onclick="gtag('event', 'click', { 'event_category': 'whatsapp', 'event_label': 'Floating WA Button' });">
         <div class="wa-pulse"></div>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
     </a>
 
     <!-- HIDDEN CRM OVERLAY -->
-    <div class="crm-overlay" id="crm-overlay">
+    <div class="crm-overlay" id="crm-overlay" aria-hidden="true">
         <div class="crm-header">
             <h2 class="crm-title">Pusat Kendali Leads</h2>
-            <button class="btn-close-crm" onclick="tutupCRM()">Tutup Dasbor</button>
+            <button class="btn-close-crm" onclick="tutupCRM()" aria-label="Tutup Dasbor">Tutup Dasbor</button>
         </div>
         <div class="crm-grid" id="crm-grid"></div>
     </div>
@@ -398,12 +479,8 @@
     <!-- JAVASCRIPT LOGIC -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // ============================================================================
-        // API BACKEND TERINTEGRASI PENUH
-        // ============================================================================
         const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
 
-        // DATA ARTIKEL
         const dataArtikel = {
             1: { judul: "MANUTH JAPAN Umumkan Rebranding, Perkuat Posisi Solusi Terpadu Kerja Jepang", gambar: "berita 1.png", konten: `<p><strong>SURABAYA, Februari 2026</strong> — Pusat Pelatihan dan Penempatan Kerja Jepang, MANUTH JAPAN, resmi mengumumkan rebranding identitas merek perusahaan sekaligus merilis tagline baru "Wujudkan Impianmu, Kerja Nyaman di Jepang!" pada hari ini di Surabaya. Inisiatif strategis ini menegaskan komitmen MANUTH JAPAN sebagai fasilitas solusi terpadu resmi bagi calon pekerja migran asal Indonesia.</p><p>Perubahan identitas visual ini ditandai dengan penggunaan kombinasi warna Navy, Sakura Pink, dan Putih yang merepresentasikan profesionalisme dan kredibilitas modern. Pembaruan ini tidak sekadar perubahan logo, melainkan strategi operasional untuk mengukuhkan posisi perusahaan sebagai fasilitator yang mengurus seluruh tahapan persiapan secara komprehensif.</p><p>Untuk merealisasikannya, MANUTH JAPAN memperkenalkan enam alur keberangkatan yang difasilitasi penuh secara terpadu. Proses ini mencakup pembelajaran bahasa Jepang intensif (dari level N5 hingga N4), kelulusan sertifikasi JLPT/JFT dan SSW, fasilitasi proses wawancara, penerbitan Certificate of Eligibility (COE), pengurusan dokumen visa, hingga pemberangkatan peserta ke Jepang.</p><p>"Rebranding ini adalah wujud nyata dari ekspansi operasional kami. Kami ingin memastikan bahwa seluruh proses administrasi dan peningkatan kompetensi berjalan efisien, terukur, dan transparan, sehingga daya serap tenaga kerja Indonesia ke Jepang dapat terus meningkat secara signifikan," ujar Mas Uuth, Founder MANUTH JAPAN.</p><p>Saat ini, seluruh operasional dan layanan administrasi MANUTH JAPAN dijalankan melalui dua pusat layanan utama di Surabaya, yakni Kantor Pusat yang berlokasi di Jl. Pandugo No. 16 dan Kantor Cabang di Jl. Ketintang Madya No. 140.</p><div class="swal-article-contact"><strong>Tentang MANUTH JAPAN</strong><br>MANUTH JAPAN hadir sebagai jembatan impian Anda. Kami membantu Anda dari nol hingga terbang ke Jepang, Anda cukup fokus belajar, kami urus sisanya!<br><br><strong>Kontak:</strong><br>Nama: Mas Uuth (Founder MANUTH JAPAN)<br>Telepon/WA: 081-339-760-265<br>Instagram: @manuthjapan</div>` },
             2: { judul: "MANUTH JAPAN Buka Pendaftaran Program SSW, Bidik Kuota 850.000 Pekerja", gambar: "berita 2.png", konten: `<p><strong>SURABAYA, Juni 2026</strong> — Pusat pelatihan tenaga kerja MANUTH JAPAN resmi membuka pendaftaran besar-besaran untuk Program Tokutei Ginou atau Specified Skilled Worker (SSW) di Surabaya, guna memfasilitasi penyerapan kuota 850.000 pekerja asing yang dibuka oleh pemerintah Jepang tahun ini.</p><p>Program ini menargetkan kandidat berusia 18 hingga 35 tahun dengan kualifikasi pendidikan minimal SMA atau SMK sederajat. Melalui layanan terpadu, peserta akan menjalani pelatihan bahasa Jepang selama kurang lebih enam bulan untuk mencapai sertifikasi wajib JFT A2 atau JLPT. Selain itu, MANUTH JAPAN juga memfasilitasi sertifikasi keterampilan khusus (SSW) pada enam sektor bidang kerja utama yang sedang mengalami defisit tenaga kerja di Jepang.</p><p>Setelah tersertifikasi, kandidat diproyeksikan menerima gaji pokok yang kompetitif, yakni berkisar antara Rp18 juta hingga Rp24 juta per bulan. Pemegang visa SSW ini akan menerima perlindungan hukum dan hak ketenagakerjaan yang sepenuhnya setara dengan warga negara Jepang. Selain pendapatan tinggi, visa kerja profesional ini memberikan keleluasaan bagi pekerja untuk berpindah tempat kerja, serta memberikan opsi untuk membawa anggota keluarga setelah memenuhi persyaratan masa kerja tertentu.</p><p>"Jepang sedang menghadapi krisis demografi dan kekurangan tenaga kerja produktif, yang mana kuota 850.000 ini adalah momentum strategis bagi angkatan kerja Indonesia. Kami memastikan setiap proses administratif, mulai dari pelatihan bahasa hingga pengurusan dokumen keimigrasian, berjalan transparan untuk mengamankan posisi kandidat kita di pasar kerja global," ujar Mas Uuth, Founder MANUTH JAPAN.</p><p>Seluruh kelengkapan dokumen keberangkatan dan legalitas para kandidat akan dikelola dan didampingi sepenuhnya oleh pihak MANUTH JAPAN untuk memastikan kelancaran proses penempatan.</p><div class="swal-article-contact"><strong>Tentang MANUTH JAPAN</strong><br>MANUTH JAPAN adalah penyedia Solusi Terpadu Pelatihan Bahasa, Sertifikasi, dan Penempatan Kerja Resmi ke Jepang. Melalui manajemen yang transparan dan terstruktur, program fasilitasi kerja SSW kami menjanjikan potensi tabungan bersih hingga Rp 10.000.000 per bulan bagi setiap peserta yang berhasil ditempatkan.<br><br><strong>Kontak:</strong><br>Nama: Mas Uuth (Founder MANUTH JAPAN)<br>Telepon/WA: 081-339-760-265<br>Website: manuthjapan.com</div>` },
@@ -415,13 +492,22 @@
             Swal.fire({ title: artikel.judul, html: `<img src="${artikel.gambar}" class="swal-article-img" onerror="this.src='https://via.placeholder.com/800x400'"><div class="swal-article-text">${artikel.konten}</div>`, width: '800px', customClass: { popup: 'swal-wide', title: 'news-title' }, showCloseButton: true, showConfirmButton: false, background: '#FFFFFF' });
         }
 
-        // ============================================================================
-        // LEAD MAGNET & IFRAME INJECT
-        // ============================================================================
         function triggerLeadMagnet(tipeAkses) {
             Swal.fire({
                 title: 'Dapatkan Akses Gratis!',
-                html: `<p style="font-size: 14px; margin-bottom: 20px;">Masukkan Nama dan No. WhatsApp Anda untuk melanjutkan.</p><input type="text" id="swal-nama" class="swal2-input" placeholder="Nama Lengkap" style="width: 85%;"><input type="tel" id="swal-wa" class="swal2-input" placeholder="No. WhatsApp (Misal: 08123...)" style="width: 85%;"><p style="font-size: 11px; color: var(--slate-grey); margin-top: 20px; text-align: left; padding: 0 10px;">Dengan menekan tombol di bawah, saya setuju menerima akses materi dan informasi program kerja Jepang dari MANUTH JAPAN via WhatsApp. Data tidak akan dijual ke pihak ketiga.</p>`,
+                html: `
+                    <div class="swal-form-container">
+                        <label class="swal-form-label">Nama Lengkap</label>
+                        <input type="text" id="swal-nama" class="swal2-input custom-swal-input" placeholder="Ketik nama Anda di sini..." aria-label="Nama Lengkap">
+                        
+                        <label class="swal-form-label">No. WhatsApp Aktif</label>
+                        <input type="tel" id="swal-wa" class="swal2-input custom-swal-input" placeholder="Contoh: 081234567890" aria-label="Nomor WhatsApp">
+                        
+                        <div class="swal-legal-box">
+                            <p class="swal-legal-text"><strong>🔒 Privasi Terjamin:</strong> Dengan menekan tombol di bawah, saya setuju menerima akses materi dan informasi program kerja Jepang dari MANUTH JAPAN via WhatsApp. Data tidak akan dijual ke pihak ketiga.</p>
+                        </div>
+                    </div>
+                `,
                 background: '#FFFFFF', confirmButtonText: 'Dapatkan Akses', confirmButtonColor: '#FF8DA1', showCancelButton: true, cancelButtonText: 'Batal', cancelButtonColor: '#94A3B8', focusConfirm: false, backdrop: 'rgba(0,0,0,0.8)', customClass: { confirmButton: 'btn-cta' },
                 preConfirm: () => {
                     const nama = document.getElementById('swal-nama').value.trim(); const waInput = document.getElementById('swal-wa'); let wa = waInput.value.replace(/[^0-9]/g, ''); 
@@ -431,7 +517,6 @@
                 }
             }).then((result) => { 
                 if (result.isConfirmed) { 
-                    // EVENT GA4: Pelacakan konversi makro (Submit Lead Magnet)
                     if(typeof gtag === 'function') {
                         gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': 'Lead Magnet Form Submit' });
                     }
@@ -462,7 +547,7 @@
                 if (data.tipe === 'apps') { 
                     document.getElementById('lead-magnet-cards').innerHTML = `
                         <div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); background:#fff; position:relative; grid-column: 1 / -1;">
-                            <iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" style="position:absolute; top:0; left:0;"></iframe>
+                            <iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" style="position:absolute; top:0; left:0;" title="Aplikasi Gampang Jepang"></iframe>
                         </div>
                     `;
                 } 
@@ -470,9 +555,6 @@
             });
         }
 
-        // ============================================================================
-        // HIDDEN CRM DASHBOARD LOGIC (PINTU RAHASIA)
-        // ============================================================================
         let clickCount = 0; let clickTimer;
         document.getElementById('secret-trigger').addEventListener('click', function() {
             clickCount++;
@@ -481,7 +563,14 @@
         });
 
         function bukaPintuRahasia() {
-            Swal.fire({ title: 'Otorisasi Admin', input: 'password', inputPlaceholder: 'Masukkan PIN Rahasia', confirmButtonText: 'Akses CRM', confirmButtonColor: '#0A2540' }).then((result) => {
+            Swal.fire({ 
+                title: 'Otorisasi Admin', 
+                input: 'password', 
+                inputPlaceholder: 'Masukkan PIN Rahasia', 
+                confirmButtonText: 'Akses CRM', 
+                confirmButtonColor: '#0A2540',
+                customClass: { input: 'custom-swal-input' }
+            }).then((result) => {
                 if (result.value) { 
                     Swal.fire({ title: 'Mengautentikasi...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } }); 
                     
@@ -525,17 +614,19 @@
                         </div>
                         <div class="crm-actions">
                             <a href="${waLink}" target="_blank" class="btn-wa">Follow Up WA</a>
-                            <button class="btn-check" onclick="tandaiSelesai(${lead.row})" title="Tandai Selesai">${checkIcon}</button>
+                            <button class="btn-check" onclick="tandaiSelesai(${lead.row})" title="Tandai Selesai" aria-label="Tandai Selesai">${checkIcon}</button>
                         </div>
                     </div>
                 `;
             });
             document.getElementById('crm-overlay').style.display = 'block';
+            document.getElementById('crm-overlay').setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; 
         }
 
         function tutupCRM() {
             document.getElementById('crm-overlay').style.display = 'none';
+            document.getElementById('crm-overlay').setAttribute('aria-hidden', 'true');
             document.body.style.overflow = 'auto';
         }
 
