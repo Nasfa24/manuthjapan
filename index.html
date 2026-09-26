@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW).">
+    <title>MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang</title>
+    
+    <!-- Google Fonts: Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+    <style>
+        /* ==========================================================================
+           1. VARIABEL & RESET
+           ========================================================================== */
+        :root {
+            --deep-indigo: #0A2540;
+            --sakura-pink: #FF8DA1;
+            --warm-gold: #FFB703;
+            --clean-slate: #FFFFFF;
+            --soft-ice-blue: #E0F7FA;
+            --slate-grey: #94A3B8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--clean-slate);
+            color: var(--deep-indigo);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Animasi Getar (Shake) untuk Validasi Error */
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        .shake-error { animation: shake 0.5s; border-color: red !important; }
+
+        /* ==========================================================================
+           2. KOMPONEN UMUM (TOMBOL, BAGIAN, JUDUL)
+           ========================================================================== */
+        .btn-cta {
+            background-color: var(--sakura-pink);
+            color: var(--clean-slate);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(255, 141, 161, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            min-height: 44px; /* Target sentuh seluler (Minimum 44px) */
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-cta:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 141, 161, 0.6);
+        }
+        
+        .btn-cta:active:not(:disabled) { transform: translateY(0); }
+        .btn-cta:disabled { opacity: 0.7; cursor: not-allowed; }
+
+        .section-container { padding: 80px 5%; background-color: var(--clean-slate); }
+        .bg-light-blue { background-color: var(--soft-ice-blue); }
+        
+        .section-title {
+            text-align: center;
+            font-size: clamp(28px, 4vw, 36px);
+            margin-bottom: 50px;
+            color: var(--deep-indigo);
+            font-weight: 800;
+        }
+        .section-subtitle {
+            text-align: center;
+            margin-top: -40px;
+            margin-bottom: 50px;
+            color: var(--slate-grey);
+            font-weight: 500;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Desain Kartu 3D (Anti-Flat) */
+        .card {
+            background: var(--clean-slate);
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(10, 37, 64, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 5px solid var(--sakura-pink);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(10, 37, 64, 0.15);
+        }
+
+        .card h3 { color: var(--deep-indigo); font-size: 22px; margin-bottom: 15px; font-weight: 700; }
+        .card p { color: var(--deep-indigo); opacity: 0.8; font-size: 15px; margin-bottom: 25px; }
+
+        /* ==========================================================================
+           3. LAYOUT SPESIFIK
+           ========================================================================== */
+        /* Sticky Navbar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background-color: var(--clean-slate);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(10, 37, 64, 0.05);
+            z-index: 1000;
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { max-height: 45px; width: auto; object-fit: contain; }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--soft-ice-blue);
+            padding: 80px 5%;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; max-width: 800px; }
+        .hero p { font-size: clamp(16px, 2vw, 20px); font-weight: 600; margin-bottom: 40px; max-width: 700px; opacity: 0.9; }
+
+        /* Alur Keberangkatan */
+        .step-number {
+            background-color: var(--deep-indigo);
+            color: var(--clean-slate);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: 800;
+            font-size: 20px;
+            margin: 0 auto 20px auto;
+            box-shadow: 0 4px 10px rgba(10, 37, 64, 0.2);
+        }
+
+        /* Tag Sorotan (Gaji/Status) */
+        .highlight-tag {
+            display: inline-block;
+            background-color: var(--warm-gold);
+            color: var(--deep-indigo);
+            font-weight: 800;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 14px;
+            margin-top: auto;
+            box-shadow: 0 4px 10px rgba(255, 183, 3, 0.3);
+        }
+
+        /* Transparansi Finansial */
+        .financial-box {
+            background-color: var(--deep-indigo);
+            color: var(--clean-slate);
+            border-radius: 16px;
+            padding: 40px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+            box-shadow: 0 15px 40px rgba(10, 37, 64, 0.2);
+        }
+        .fin-row {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 15px 0;
+            font-size: 16px;
+        }
+        .fin-row:last-child { border-bottom: none; }
+        .fin-total {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--sakura-pink);
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* Social Proof / Stats */
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .stat-item { text-align: center; }
+        .stat-number { font-size: 48px; font-weight: 800; color: var(--sakura-pink); }
+        .stat-label { font-size: 16px; font-weight: 600; color: var(--deep-indigo); }
+
+        /* Footer */
+        footer {
+            background-color: var(--deep-indigo);
+            color: var(--clean-slate);
+            text-align: center;
+            padding: 40px 5%;
+        }
+        .footer-logo { max-height: 40px; margin-bottom: 20px; filter: brightness(0) invert(1); cursor: pointer; }
+        footer p { opacity: 0.7; font-size: 14px; }
+        .legal-text { font-size: 12px; color: var(--slate-grey); margin-top: 10px; }
+
+        /* SweetAlert Customization (Menimpa default) */
+        .swal2-popup { border-radius: 16px !important; }
+        .swal2-title { color: var(--deep-indigo) !important; font-family: 'Montserrat', sans-serif !important; }
+        .swal2-html-container { font-family: 'Montserrat', sans-serif !important; }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         NAVBAR & HERO
+         ========================================================================== -->
+    <nav class="navbar">
+        <a href="#" class="logo">
+            <img src="logo 1.png" alt="Logo MANUTH JAPAN">
+        </a>
+        <a href="#lead-magnet" class="btn-cta">Belajar Gratis</a>
+    </nav>
+
+    <section class="hero">
+        <h1>LOWONGAN KERJA RESMI KE JEPANG!</h1>
+        <p>Ubah masa depan Anda melalui program Visa Magang & Tokutei Ginou (SSW). Proses transparan, pelatihan intensif, dan penempatan kerja pasti.</p>
+        <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
+    </section>
+
+    <!-- ==========================================================================
+         ALUR KEBERANGKATAN
+         ========================================================================== -->
+    <section class="section-container">
+        <h2 class="section-title">6 Langkah Menuju Jepang</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <div class="step-number">1</div>
+                <h3>Pendaftaran & Konsultasi</h3>
+                <p>Memilih program kerja yang paling sesuai dengan kualifikasi dan minat Anda.</p>
+            </div>
+            <div class="card">
+                <div class="step-number">2</div>
+                <h3>Belajar N5 - N4</h3>
+                <p>Pelatihan bahasa Jepang intensif dari nol hingga tingkat menengah.</p>
+            </div>
+            <div class="card">
+                <div class="step-number">3</div>
+                <h3>Ujian Sertifikasi</h3>
+                <p>Mengikuti ujian JFT/JLPT serta Skill Test resmi untuk persyaratan visa.</p>
+            </div>
+            <div class="card">
+                <div class="step-number">4</div>
+                <h3>Job Matching</h3>
+                <p>Wawancara (Mensetsu) langsung dengan pihak perusahaan (User) dari Jepang.</p>
+            </div>
+            <div class="card">
+                <div class="step-number">5</div>
+                <h3>Medical Check-up & CoE</h3>
+                <p>Pemeriksaan kesehatan akhir dan pengurusan Certificate of Eligibility.</p>
+            </div>
+            <div class="card">
+                <div class="step-number">6</div>
+                <h3>Terbang ke Jepang</h3>
+                <p>Pembekalan akhir, penandatanganan kontrak, dan keberangkatan.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         PROGRAM UNGGULAN
+         ========================================================================== -->
+    <section class="section-container bg-light-blue" id="program">
+        <h2 class="section-title">Program Unggulan Kami</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <h3>Tokutei Ginou (SSW)</h3>
+                <p>Visa pekerja keahlian spesifik dengan fasilitas dan standar gaji yang setara dengan warga negara Jepang lokal.</p>
+                <div class="highlight-tag">Gaji: Rp 18 - 24 Juta / bulan</div>
+            </div>
+            <div class="card">
+                <h3>Visa Magang</h3>
+                <p>Program pemagangan teknis sambil bekerja untuk meningkatkan keterampilan industri dan etos kerja.</p>
+                <div class="highlight-tag">Gaji: Rp 10 - 15 Juta / bulan</div>
+            </div>
+            <div class="card">
+                <h3>Job Matching</h3>
+                <p>Layanan pencocokan khusus bagi kandidat yang sudah memiliki sertifikat bahasa dan skill untuk wawancara langsung.</p>
+                <div class="highlight-tag">Penempatan Kerja Cepat</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         BIDANG KERJA (6 Sektor)
+         ========================================================================== -->
+    <section class="section-container">
+        <h2 class="section-title">Bidang Kerja Tersedia</h2>
+        <div class="grid-cards">
+            <div class="card"><h3>Pengolahan Makanan</h3><p>Pabrik makanan siap saji, roti, dan bento.</p></div>
+            <div class="card"><h3>Perhotelan & Pariwisata</h3><p>Resepsionis, layanan kamar, dan operasional hotel.</p></div>
+            <div class="card"><h3>Manufaktur & Pabrik</h3><p>Perakitan komponen, plastik, dan permesinan.</p></div>
+            <div class="card"><h3>Pertanian & Peternakan</h3><p>Budidaya tanaman, panen, dan perawatan hewan ternak.</p></div>
+            <div class="card"><h3>Keperawatan (Kaigo)</h3><p>Merawat lansia di panti jompo (Gaji tertinggi + Bonus).</p></div>
+            <div class="card"><h3>Konstruksi</h3><p>Pembangunan infrastruktur, sipil, dan alat berat.</p></div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         TRANSPARANSI FINANSIAL
+         ========================================================================== -->
+    <section class="section-container bg-light-blue">
+        <h2 class="section-title">Transparansi Finansial</h2>
+        <p class="section-subtitle">Simulasi Potensi Pendapatan & Pengeluaran (Berdasarkan Rata-rata Tokutei Ginou)</p>
+        
+        <div class="financial-box">
+            <div class="fin-row">
+                <span>Pendapatan Kotor (Gaji Pokok)</span>
+                <strong>± Rp 20.000.000</strong>
+            </div>
+            <div class="fin-row">
+                <span>Pajak & Asuransi (Dipotong Perusahaan)</span>
+                <strong>- Rp 3.500.000</strong>
+            </div>
+            <div class="fin-row">
+                <span>Akomodasi (Apartemen/Asrama)</span>
+                <strong>- Rp 2.500.000</strong>
+            </div>
+            <div class="fin-row">
+                <span>Biaya Hidup (Makan, Transport, Utilitas)</span>
+                <strong>- Rp 4.000.000</strong>
+            </div>
+            <div class="fin-total">
+                Potensi Tabungan Bersih: Rp 10.000.000 / Bulan
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         SOCIAL PROOF
+         ========================================================================== -->
+    <section class="section-container">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">1,000+</div>
+                <div class="stat-label">Kandidat Terdaftar</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">30+</div>
+                <div class="stat-label">Mitra Perusahaan Jepang</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Pendampingan Resmi</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         LEAD MAGNET (GATED CONTENT) - Ujung Tombak Konversi
+         ========================================================================== -->
+    <section class="section-container bg-light-blue" id="lead-magnet">
+        <h2 class="section-title">Mulai Perjalanan Anda Gratis!</h2>
+        <p class="section-subtitle">Akses materi premium dan aplikasi interaktif kami sebelum Anda memutuskan mendaftar.</p>
+        
+        <div class="grid-cards" style="max-width: 800px;">
+            <div class="card" style="border-top-color: var(--warm-gold);">
+                <h3>Apps "Gampang Jepang"</h3>
+                <p>Aplikasi interaktif pengenalan huruf Hiragana & Katakana berbasis web.</p>
+                <button class="btn-cta" onclick="triggerLeadMagnet('apps')">Buka Apps</button>
+            </div>
+            <div class="card">
+                <h3>Kumpulan Materi Premium</h3>
+                <p>Modul saku PDF, panduan wawancara, dan bocoran soal JLPT N5.</p>
+                <button class="btn-cta" onclick="triggerLeadMagnet('materi')">Akses Materi</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         FOOTER & HIDDEN CRM TRIGGER
+         ========================================================================== -->
+    <footer>
+        <img src="logo 1.png" alt="MANUTH JAPAN Logo" class="footer-logo" id="secret-trigger">
+        <p>Jl. Pandugo No. 16 | Jl. Ketintang Madya No. 140, Surabaya</p>
+        <p>&copy; 2026 MANUTH JAPAN. All Rights Reserved.</p>
+        <p class="legal-text">Lembaga Pelatihan Kerja Resmi. Data Anda dilindungi oleh kebijakan privasi kami.</p>
+    </footer>
+
+    <!-- ==========================================================================
+         JAVASCRIPT LOGIC (LEAD MAGNET, VALIDASI, & ANTI-KLIK GANDA)
+         ========================================================================== -->
+    <!-- SweetAlert2 Library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <script>
+        /**
+         * Sistem Lead Magnet - Memicu Pop-up dengan SweetAlert2
+         * Sesuai Spesifikasi: Tidak flat, shadow, validasi WA, dan anti-spam.
+         */
+        function triggerLeadMagnet(tipeAkses) {
+            Swal.fire({
+                title: 'Dapatkan Akses Gratis!',
+                html: `
+                    <p style="font-size: 14px; margin-bottom: 20px;">Masukkan Nama dan No. WhatsApp Anda untuk melanjutkan.</p>
+                    <input type="text" id="swal-nama" class="swal2-input" placeholder="Nama Lengkap" style="width: 85%;">
+                    <input type="tel" id="swal-wa" class="swal2-input" placeholder="No. WhatsApp (Misal: 08123...)" style="width: 85%;">
+                    <p style="font-size: 11px; color: var(--slate-grey); margin-top: 20px; text-align: left; padding: 0 10px;">
+                        Dengan menekan tombol di bawah, saya setuju menerima akses materi dan informasi program kerja Jepang dari MANUTH JAPAN via WhatsApp. Data tidak akan dijual ke pihak ketiga.
+                    </p>
+                `,
+                background: '#FFFFFF',
+                confirmButtonText: 'Dapatkan Akses',
+                confirmButtonColor: '#FF8DA1',
+                showCancelButton: true,
+                cancelButtonText: 'Batal',
+                cancelButtonColor: '#94A3B8',
+                focusConfirm: false,
+                backdrop: 'rgba(0,0,0,0.8)', // Transparan 80%
+                customClass: {
+                    confirmButton: 'btn-cta'
+                },
+                preConfirm: () => {
+                    const nama = document.getElementById('swal-nama').value.trim();
+                    const waInput = document.getElementById('swal-wa');
+                    let wa = waInput.value.replace(/[^0-9]/g, ''); // Buang selain angka
+
+                    // Validasi Kosong
+                    if (!nama || !wa) {
+                        Swal.showValidationMessage('Nama dan No. WhatsApp wajib diisi!');
+                        return false;
+                    }
+
+                    // Validasi Logika Nomor WA (Minimal 10 digit, awalan 08 atau 62)
+                    if (wa.length < 10 || (!wa.startsWith('08') && !wa.startsWith('62'))) {
+                        waInput.classList.add('shake-error');
+                        setTimeout(() => waInput.classList.remove('shake-error'), 500);
+                        Swal.showValidationMessage('Nomor tidak valid! Gunakan awalan 08 atau 62 (Min. 10 angka).');
+                        return false;
+                    }
+
+                    return { nama: nama, wa: wa, tipe: tipeAkses };
+                }
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    prosesKirimData(result.value);
+                }
+            });
+        }
+
+        /**
+         * Simulasi Pengiriman Data ke Backend (Google Apps Script)
+         * Termasuk pencegahan klik ganda & status loading
+         */
+        function prosesKirimData(data) {
+            // Tampilkan Loading (Ganti status tombol/UI)
+            Swal.fire({
+                title: 'Memproses Data...',
+                html: 'Mohon tunggu sebentar.',
+                allowOutsideClick: false,
+                didOpen: () => {
+                    Swal.showLoading();
+                }
+            });
+
+            // Blok try-catch untuk ketahanan sistem sesuai instruksi (Simulasi fetch ke GAS)
+            try {
+                // Di sini nanti diletakkan kode: fetch('URL_GAS_ANDA', { method: 'POST', body: ... })
+                // Untuk sekarang kita simulasi delay jaringan selama 1.5 detik
+                setTimeout(() => {
+                    tampilkanSukses(data);
+                }, 1500);
+
+            } catch (error) {
+                Swal.fire('Terjadi Kesalahan', 'Sedang ada antrean sistem, mohon coba 1 menit lagi.', 'error');
+            }
+        }
+
+        /**
+         * Eksekusi Akses & Notifikasi Sukses
+         */
+        function tampilkanSukses(data) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Berhasil!',
+                text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`,
+                confirmButtonText: 'Buka Sekarang',
+                confirmButtonColor: '#FF8DA1'
+            }).then(() => {
+                // Eksekusi berdasarkan pilihan
+                if (data.tipe === 'apps') {
+                    // Sesuai PRD: Jika ada Iframe, bisa memuat di sini. 
+                    // Sementara kita arahkan ke tab baru sesuai fallback amannya.
+                    window.open('https://gampangjepang.netlify.app/', '_blank');
+                } else if (data.tipe === 'materi') {
+                    // Arahkan ke Google Drive
+                    window.open('https://drive.google.com/', '_blank');
+                }
+            });
+        }
+
+        /**
+         * PINTU RAHASIA (EASTER EGG - HIDDEN CRM)
+         * Klik logo footer 5 kali dengan cepat untuk membuka form PIN Admin.
+         */
+        let clickCount = 0;
+        let clickTimer;
+
+        document.getElementById('secret-trigger').addEventListener('click', function() {
+            clickCount++;
+            
+            if (clickCount === 1) {
+                clickTimer = setTimeout(() => { clickCount = 0; }, 2000); // Reset dalam 2 detik
+            }
+            
+            if (clickCount >= 5) {
+                clearTimeout(clickTimer);
+                clickCount = 0;
+                bukaPintuRahasia();
+            }
+        });
+
+        function bukaPintuRahasia() {
+            Swal.fire({
+                title: 'Otorisasi Admin',
+                input: 'password',
+                inputPlaceholder: 'Masukkan PIN Rahasia',
+                confirmButtonText: 'Akses CRM',
+                confirmButtonColor: '#0A2540'
+            }).then((result) => {
+                if (result.value) {
+                    // Animasi Sakura / Spin untuk latency
+                    Swal.fire({
+                        title: 'Mengautentikasi...',
+                        allowOutsideClick: false,
+                        didOpen: () => { Swal.showLoading(); }
+                    });
+                    
+                    // Logika Backend GAS akan dieksekusi dari sini nantinya.
+                    setTimeout(() => {
+                        Swal.fire('Validasi GAS diperlukan', 'Backend belum disambungkan', 'info');
+                    }, 1000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
