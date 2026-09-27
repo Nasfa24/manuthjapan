@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW). Pusat pelatihan bahasa Jepang dan penempatan tenaga kerja di Surabaya.">
     
+    <!-- PRELOAD HERO IMAGE UNTUK MENGHANCURKAN LCP DELAY (< 2.5 DETIK) -->
+    <link rel="preload" as="image" href="japan 1.webp">
+
     <!-- SECURITY META -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/ https://www.google.com/maps/;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,19 +17,19 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="MANUTH JAPAN - Solusi Kerja Resmi ke Jepang">
     <meta property="og:description" content="Dapatkan gaji puluhan juta! Kami urus pelatihan N5-N4, sertifikasi SSW, hingga penempatan kerja.">
-    <meta property="og:image" content="https://manuthjapan.com/berita 1.png">
+    <meta property="og:image" content="https://manuthjapan.com/berita 1.webp">
     <meta property="og:url" content="https://manuthjapan.com/">
     
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="MANUTH JAPAN - Solusi Kerja Resmi ke Jepang">
     <meta name="twitter:description" content="Dapatkan gaji puluhan juta! Kami urus pelatihan N5-N4, sertifikasi SSW, hingga penempatan kerja.">
-    <meta name="twitter:image" content="https://manuthjapan.com/berita 1.png">
+    <meta name="twitter:image" content="https://manuthjapan.com/berita 1.webp">
     <title>MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang</title>
     
     <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
-    <link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
-    <link rel="apple-touch-icon" href="favicon-512.png">
+    <link rel="icon" type="image/webp" sizes="32x32" href="favicon-32.webp">
+    <link rel="icon" type="image/webp" sizes="512x512" href="favicon-512.webp">
+    <link rel="apple-touch-icon" href="favicon-512.webp">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,6 +48,37 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-8Y0240JSRR');
+    </script>
+
+    <!-- SCHEMA.ORG (ORGANIZATION, LOCAL BUSINESS & BREADCRUMBS) -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "MANUTH JAPAN",
+        "url": "https://manuthjapan.com",
+        "logo": "https://manuthjapan.com/logo 1.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-81-339-760-265",
+          "contactType": "customer service"
+        },
+        "address": [
+          { "@type": "PostalAddress", "streetAddress": "Jl. Pandugo No. 16", "addressLocality": "Surabaya", "addressRegion": "Jawa Timur", "addressCountry": "ID" },
+          { "@type": "PostalAddress", "streetAddress": "Jl. Ketintang Madya No. 140", "addressLocality": "Surabaya", "addressRegion": "Jawa Timur", "addressCountry": "ID" }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Beranda", "item": "https://manuthjapan.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Program Jepang", "item": "https://manuthjapan.com/#program" },
+          { "@type": "ListItem", "position": 3, "name": "Akses Gratis", "item": "https://manuthjapan.com/#lead-magnet" }
+        ]
+      }
+    ]
     </script>
 
     <style>
@@ -80,20 +114,20 @@
         .card p { color: var(--deep-indigo); opacity: 0.8; font-size: 15px; margin-bottom: 25px; }
 
         /* ==========================================================================
-           3. BACKGROUND & LAYOUT SPESIFIK
+           3. BACKGROUND & LAYOUT SPESIFIK (Semua dikonversi ke WebP)
            ========================================================================== */
         .navbar { position: sticky; top: 0; background-color: var(--clean-slate); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(10, 37, 64, 0.05); z-index: 1000; }
         .logo { display: flex; align-items: center; text-decoration: none; }
         .logo img { max-height: 75px; width: auto; object-fit: contain; transition: transform 0.3s ease; }
         .logo img:hover { transform: scale(1.05); }
 
-        .hero { background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.85)), url('japan 1.png') center/cover no-repeat; padding: 120px 5% 100px; text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--clean-slate); }
+        .hero { background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.85)), url('japan 1.webp') center/cover no-repeat; padding: 120px 5% 100px; text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--clean-slate); }
         .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; max-width: 800px; color: var(--clean-slate); text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .hero p { font-size: clamp(16px, 2vw, 20px); font-weight: 500; margin-bottom: 40px; max-width: 700px; opacity: 0.95; color: var(--clean-slate); text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
 
-        .bg-langkah { background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('japan 2.png') center/cover fixed no-repeat; }
-        .bg-program { background: linear-gradient(rgba(224, 247, 250, 0.85), rgba(224, 247, 250, 0.95)), url('japan 3.png') center/cover fixed no-repeat; }
-        .bg-finansial { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.95)), url('japan 4.png') center/cover no-repeat; color: var(--clean-slate); }
+        .bg-langkah { background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('japan 2.webp') center/cover fixed no-repeat; }
+        .bg-program { background: linear-gradient(rgba(224, 247, 250, 0.85), rgba(224, 247, 250, 0.95)), url('japan 3.webp') center/cover fixed no-repeat; }
+        .bg-finansial { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.95)), url('japan 4.webp') center/cover no-repeat; color: var(--clean-slate); }
         .bg-finansial .section-title { color: var(--clean-slate); text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         .bg-finansial .section-subtitle { color: #CBD5E1; }
 
@@ -103,9 +137,9 @@
         .program-accordion-container { display: flex; width: 100%; max-width: 1200px; margin: 0 auto; height: 450px; gap: 20px; position: relative; z-index: 2; }
         .prog-item { flex: 1; position: relative; overflow: hidden; border-radius: 24px; background-color: var(--deep-indigo); transition: flex 0.6s cubic-bezier(0.25, 1, 0.5, 1); cursor: pointer; box-shadow: 0 10px 30px rgba(10, 37, 64, 0.2); display: flex; flex-direction: column; justify-content: flex-end; }
         .prog-item:hover { flex: 3; box-shadow: 0 15px 40px rgba(10, 37, 64, 0.4); }
-        .prog-item:nth-child(1) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('japan 3.png') center/cover no-repeat; border-bottom: 6px solid var(--sakura-pink); }
-        .prog-item:nth-child(2) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('kerja 3.png') center/cover no-repeat; border-bottom: 6px solid var(--warm-gold); }
-        .prog-item:nth-child(3) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('kerja 2.png') center/cover no-repeat; border-bottom: 6px solid #48CAE4; }
+        .prog-item:nth-child(1) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('japan 3.webp') center/cover no-repeat; border-bottom: 6px solid var(--sakura-pink); }
+        .prog-item:nth-child(2) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('kerja 3.webp') center/cover no-repeat; border-bottom: 6px solid var(--warm-gold); }
+        .prog-item:nth-child(3) { background: linear-gradient(to bottom, rgba(10,37,64,0.3), rgba(10,37,64,0.9)), url('kerja 2.webp') center/cover no-repeat; border-bottom: 6px solid #48CAE4; }
         .prog-content { padding: 30px; color: var(--clean-slate); width: 100%; min-width: 300px; }
         .prog-content h3 { font-size: 24px; font-weight: 800; margin-bottom: 10px; white-space: nowrap; text-shadow: 0 2px 5px rgba(0,0,0,0.5); }
         .prog-details { opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease, transform 0.4s ease; pointer-events: none; max-height: 0; }
@@ -118,7 +152,7 @@
            ========================================================================== */
         .card-kerja { position: relative; overflow: hidden; border-top: none; padding-top: 180px; justify-content: flex-end; text-align: left; }
         .card-kerja::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-size: cover; background-position: center; z-index: 0; transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
-        .card-makanan::before { background-image: url('kerja 1.png'); } .card-perhotelan::before { background-image: url('kerja 2.png'); } .card-manufaktur::before { background-image: url('kerja 3.png'); } .card-pertanian::before { background-image: url('kerja 4.png'); } .card-keperawatan::before { background-image: url('kerja 5.png'); } .card-konstruksi::before { background-image: url('kerja 6.png'); }
+        .card-makanan::before { background-image: url('kerja 1.webp'); } .card-perhotelan::before { background-image: url('kerja 2.webp'); } .card-manufaktur::before { background-image: url('kerja 3.webp'); } .card-pertanian::before { background-image: url('kerja 4.webp'); } .card-keperawatan::before { background-image: url('kerja 5.webp'); } .card-konstruksi::before { background-image: url('kerja 6.webp'); }
         .card-kerja::after { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(10,37,64,0.1) 0%, rgba(10,37,64,0.9) 100%); z-index: 1; }
         .card-kerja:hover::before { transform: scale(1.12); }
         .card-kerja h3, .card-kerja p { position: relative; z-index: 2; color: var(--clean-slate) !important; margin-bottom: 10px; }
@@ -281,7 +315,7 @@
     <main>
         <!-- NAVBAR & HERO -->
         <nav class="navbar">
-            <a href="#" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.png" alt="Logo MANUTH JAPAN"></a>
+            <a href="#" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.webp" alt="Logo MANUTH JAPAN" width="180" height="60"></a>
             <a href="#lead-magnet" class="btn-cta" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Nav Bar CTA' });">Belajar Gratis</a>
         </nav>
 
@@ -341,6 +375,62 @@
             </div>
         </section>
 
+        <!-- TESTIMONIAL MARQUEE -->
+        <section class="testimonial-section">
+            <h2 class="section-title">Kisah Sukses Mereka</h2>
+            <p class="section-subtitle">Ribuan kandidat telah membuktikan keberhasilan program kami.</p>
+            <div class="marquee-container">
+                <div class="marquee-track">
+                    <div class="testi-card"><div class="testi-header"><img src="testi 1.webp" alt="Rohman" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 2.webp" alt="Fahri" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 3.webp" alt="Sugiyanto" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Sugiyanto</h4><span>Sidoarjo, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Lulus SSW dan kerja pakai visa Tokutei Ginou. Gajinya mantap, bisa nabung banyak."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 4.webp" alt="Syarief" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Syarief</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Ikut jalur magang, cuma 3 bulan belajar langsung siap berangkat. Makasih Manuth!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 5.webp" alt="Haidar Fahmi" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Haidar Fahmi</h4><span>Kediri, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Kelas bahasa Jepangnya seru! Tutornya sabar membimbing dari N5 sampai lulus N4."</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 6.webp" alt="Ariyanto" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Ariyanto</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Punya sertifikat N4 langsung dibantu job matching. Sekarang kerja di perhotelan!"</div></div>
+                    <!-- (Sengaja dipangkas ke 6 agar lebih ringan LCP, gunakan CSS grid atau infinite duplicate track via JS jika mau banyak) -->
+                    <div class="testi-card"><div class="testi-header"><img src="testi 1.webp" alt="Rohman Clone" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Rohman</h4><span>Malang, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Belajar dari nol sampai berangkat ke Jepang diurus semua. Sangat membantu!"</div></div>
+                    <div class="testi-card"><div class="testi-header"><img src="testi 2.webp" alt="Fahri Clone" class="testi-avatar" width="60" height="60" loading="lazy" onerror="this.src='https://via.placeholder.com/60'"><div class="testi-info"><h4>Fahri</h4><span>Mojokerto, 2026</span></div></div><div class="testi-stars">★★★★★</div><div class="testi-content">"Pengurusan COE dan Visa cepat banget. Anti ribet, kita terima beres!"</div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEWS & ARTICLE -->
+        <section class="section-container">
+            <h2 class="section-title">News & Article</h2>
+            <p class="section-subtitle">Pembaruan resmi dan informasi terkini dari MANUTH JAPAN.</p>
+            <div class="news-editorial-layout">
+                <div class="news-card news-main" onclick="bukaArtikel(1)" role="button" tabindex="0" aria-label="Baca Artikel MANUTH JAPAN Umumkan Rebranding">
+                    <img src="berita 1.webp" alt="Ilustrasi Rebranding Manuth Japan" class="news-img" width="800" height="350" loading="lazy" onerror="this.src='https://via.placeholder.com/800x400'">
+                    <div class="news-body">
+                        <span class="news-tag">Press Release</span>
+                        <h3 class="news-title">MANUTH JAPAN Umumkan Rebranding, Perkuat Posisi Solusi Terpadu Kerja Jepang</h3>
+                        <p class="news-snippet">Langkah strategis ini mencakup pengenalan identitas visual baru dan enam alur fasilitasi keberangkatan untuk efisiensi penempatan tenaga kerja.</p>
+                        <span class="read-more">Baca Selengkapnya &rarr;</span>
+                    </div>
+                </div>
+                <div class="news-side-stack">
+                    <div class="news-card news-side" onclick="bukaArtikel(2)" role="button" tabindex="0" aria-label="Baca Artikel Pendaftaran SSW">
+                        <img src="berita 2.webp" alt="Ilustrasi Pendaftaran SSW" class="news-img" width="400" height="200" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
+                        <div class="news-body">
+                            <span class="news-tag">Program Resmi</span>
+                            <h3 class="news-title">Buka Pendaftaran SSW, Bidik Kuota 850.000 Pekerja</h3>
+                            <p class="news-snippet">Lulusan SMA/SMK berpeluang mendapatkan gaji hingga Rp24 juta per bulan dengan hak setara pekerja lokal.</p>
+                            <span class="read-more">Baca Selengkapnya &rarr;</span>
+                        </div>
+                    </div>
+                    <div class="news-card news-side" onclick="bukaArtikel(3)" role="button" tabindex="0" aria-label="Baca Artikel Magang Jepang">
+                        <img src="berita 3.webp" alt="Ilustrasi Magang Jepang" class="news-img" width="400" height="200" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
+                        <div class="news-body">
+                            <span class="news-tag">Inovasi Layanan</span>
+                            <h3 class="news-title">Jalur Cepat Magang Jepang Bergaji Belasan Juta</h3>
+                            <p class="news-snippet">Program Ginou Jishusei tanpa syarat sertifikat bahasa menargetkan lulusan SMA/SMK untuk percepatan serapan kerja.</p>
+                            <span class="read-more">Baca Selengkapnya &rarr;</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- FAQ SECTION -->
         <section class="section-container">
             <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
@@ -383,7 +473,7 @@
     <footer>
         <div class="footer-grid">
             <div class="footer-info">
-                <img src="logo 1.png" alt="Tombol Dasbor Internal MANUTH JAPAN" class="footer-logo" id="secret-trigger" loading="lazy" tabindex="0" role="button" aria-label="Buka Dasbor Rahasia">
+                <img src="logo 1.webp" alt="Tombol Dasbor Internal MANUTH JAPAN" class="footer-logo" id="secret-trigger" loading="lazy" tabindex="0" role="button" aria-label="Buka Dasbor Rahasia" width="150" height="50">
                 <p><strong>Lembaga Pelatihan Kerja Resmi.</strong></p>
                 <p>Pusat Pelatihan & Penempatan Tenaga Kerja Jepang di Surabaya.</p>
                 <p style="margin-top: 15px;">📍 Jl. Pandugo No. 16, Surabaya</p>
@@ -391,7 +481,7 @@
                 <p>📞 +62-81-339-760-265</p>
             </div>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.407767351651!2d112.7844015!3d-7.311756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa68b7582315%3A0xc6822cfa03f5ce62!2sJl.%20Pandugo%2C%20Surabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1695819028345!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi MANUTH JAPAN"></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15830.407767351651!2d112.7844015!3d-7.311756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa68b7582315%3A0xc6822cfa03f5ce62!2sJl.%20Pandugo%2C%20Surabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1695819028345!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Peta Lokasi Kantor Pusat MANUTH JAPAN"></iframe>
             </div>
         </div>
         <div class="footer-bottom">
@@ -404,20 +494,19 @@
     <div class="crm-overlay" id="crm-overlay" aria-hidden="true">
         <div class="crm-nav">
             <div class="crm-nav-left">
-                <img src="logo 1.png" alt="Logo" class="crm-logo">
+                <img src="logo 1.webp" alt="Logo" class="crm-logo" width="120" height="40">
                 <h2 class="crm-title">Pusat Kendali Leads</h2>
             </div>
             <div class="crm-nav-right">
                 <button class="btn-crm-action btn-refresh" onclick="muatDataCRM(true)" aria-label="Refresh Data">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M2.13 15.57a10 10 0 1 0 3.43-11.23L2.5 8"/></svg> Segarkan
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.13 15.57a10 10 0 1 0 3.43-11.23L2.5 8"/></svg> Segarkan
                 </button>
                 <button class="btn-crm-action btn-logout" onclick="tutupCRM(true)" aria-label="Keluar">Keluar</button>
             </div>
         </div>
         
-        <!-- Kontainer Loading Internal -->
         <div id="crm-loading-container" style="display:none; text-align:center; padding-top: 15vh;">
-            <img src="logo 1.png" class="custom-sakura-spinner" alt="Loading..." style="width: 80px; height: 80px;">
+            <img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." style="width: 80px; height: 80px;" width="80" height="80">
             <p style="margin-top: 20px; font-weight: 700; color: var(--deep-indigo); font-size: 18px;">Menyinkronkan Data Google Sheets...</p>
         </div>
 
@@ -434,10 +523,22 @@
     <!-- JAVASCRIPT LOGIC -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
-        // GANTI URL DI BAWAH DENGAN URL DEPLOYMENT VERSI BARU DARI GOOGLE APPS SCRIPT
+        // MASUKKAN URL GOOGLE APPS SCRIPT ANDA DI SINI
         const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
 
-        // FAQ Toggle Logic
+        // Konten Artikel
+        const dataArtikel = {
+            1: { judul: "MANUTH JAPAN Umumkan Rebranding", gambar: "berita 1.webp", konten: `<p>MANUTH JAPAN resmi mengumumkan rebranding...</p>` },
+            2: { judul: "Pendaftaran Program SSW", gambar: "berita 2.webp", konten: `<p>Targetkan kuota 850.000 pekerja asing...</p>` },
+            3: { judul: "Jalur Cepat Magang Jepang", gambar: "berita 3.webp", konten: `<p>Program tanpa syarat sertifikat bahasa...</p>` }
+        };
+
+        function bukaArtikel(id) {
+            const artikel = dataArtikel[id];
+            Swal.fire({ title: artikel.judul, html: `<img src="${artikel.gambar}" class="swal-article-img" width="800" height="400" alt="News Image"><div class="swal-article-text">${artikel.konten}</div>`, width: '800px', customClass: { popup: 'swal-wide', title: 'news-title' }, showCloseButton: true, showConfirmButton: false, background: '#FFFFFF' });
+        }
+
+        // FAQ Toggle
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
@@ -447,7 +548,6 @@
             });
         });
 
-        // MESIN BYPASS CORS UNIVERSAL BERBASIS GET (SUPER KEBAL 302 REDIRECT)
         async function fetchAPI(payload) {
             try {
                 const queryParams = new URLSearchParams(payload).toString();
@@ -463,10 +563,9 @@
         }
 
         function renderSpinnerSakura() {
-            return `<img src="logo 1.png" class="custom-sakura-spinner" alt="Loading...">`;
+            return `<img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." width="60" height="60">`;
         }
 
-        // LOGIKA PENDAFTARAN & LEAD MAGNET DENGAN HONEYPOT ANTI-SPAM
         function triggerLeadMagnet(tipeAkses) {
             Swal.fire({
                 title: 'Dapatkan Akses Gratis!',
@@ -476,21 +575,16 @@
                         <input type="text" id="swal-nama" class="swal2-input custom-swal-input" placeholder="Ketik nama Anda di sini..." aria-label="Nama Lengkap">
                         <label class="swal-form-label">No. WhatsApp Aktif</label>
                         <input type="tel" id="swal-wa" class="swal2-input custom-swal-input" placeholder="Contoh: 081234567890" aria-label="Nomor WhatsApp">
-                        <!-- ANTI SPAM HONEYPOT: User asli tidak akan melihat ini -->
-                        <input type="text" id="swal-hp" class="hp-trap" tabindex="-1" autocomplete="off">
+                        <input type="text" id="swal-hp" class="hp-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
                     </div>
                 `,
                 background: '#FFFFFF', confirmButtonText: 'Dapatkan Akses', confirmButtonColor: '#FF8DA1', showCancelButton: true, cancelButtonText: 'Batal', cancelButtonColor: '#94A3B8', focusConfirm: false, backdrop: 'rgba(0,0,0,0.8)', customClass: { confirmButton: 'btn-cta' },
                 preConfirm: () => {
-                    // Cek Honeypot (Jika terisi, berarti itu Bot)
                     if (document.getElementById('swal-hp').value !== '') return false;
-
                     const nama = document.getElementById('swal-nama').value.trim(); 
                     const waInput = document.getElementById('swal-wa'); 
                     let wa = waInput.value.replace(/[^0-9]/g, ''); 
-                    
                     if (!nama || !wa) { Swal.showValidationMessage('Nama dan No. WhatsApp wajib diisi!'); return false; }
-                    
                     if (!/^(08|62|8)[0-9]{8,}$/.test(wa)) { 
                         waInput.classList.remove('shake-error');
                         void waInput.offsetWidth; 
@@ -498,7 +592,6 @@
                         Swal.showValidationMessage('Gunakan format valid (Misal: 0813 / 62813).'); 
                         return false; 
                     }
-                    
                     Swal.getConfirmButton().disabled = true;
                     return { action: 'register', nama: nama, wa: wa, tipe: tipeAkses };
                 }
@@ -516,13 +609,12 @@
                 await fetchAPI(data);
                 Swal.fire({ icon: 'success', title: 'Berhasil!', text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`, confirmButtonText: 'Buka Sekarang', confirmButtonColor: '#FF8DA1' }).then(() => {
                     if (data.tipe === 'apps') { 
-                        document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0"></iframe></div>`;
+                        document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" title="Aplikasi Gampang Jepang"></iframe></div>`;
                     } else if (data.tipe === 'materi') { window.open('https://drive.google.com/', '_blank'); }
                 });
             } catch (error) { Swal.fire('Kesalahan', error.message, 'error'); }
         }
 
-        // LOGIKA AUTOLOGIN (INTERCEPT REFRESH F5 BUG) & CRM
         window.addEventListener('DOMContentLoaded', () => {
             let savedPin = sessionStorage.getItem('manuth_crm_token');
             if (savedPin) { 
@@ -544,7 +636,7 @@
         function bukaPintuRahasia() {
             Swal.fire({ 
                 title: 'Otorisasi Admin', 
-                html: '<input type="password" id="swal-pin" class="swal2-input custom-swal-input pin-swal-input" placeholder="••••••">',
+                html: '<input type="password" id="swal-pin" class="swal2-input custom-swal-input pin-swal-input" placeholder="••••••" aria-label="PIN">',
                 confirmButtonText: 'Akses CRM', confirmButtonColor: '#0A2540',
                 customClass: { popup: 'swal2-popup', confirmButton: 'btn-cta' },
                 preConfirm: () => {
@@ -591,13 +683,9 @@
                 let rawWA = String(lead.wa).replace(/[^0-9]/g, '');
                 let waFormat = rawWA;
                 
-                if (rawWA.startsWith('8')) {
-                    waFormat = '62' + rawWA;            
-                } else if (rawWA.startsWith('08')) {
-                    waFormat = '62' + rawWA.substring(1); 
-                } else if (rawWA.startsWith('62')) {
-                    waFormat = rawWA;                   
-                }
+                if (rawWA.startsWith('8')) { waFormat = '62' + rawWA; } 
+                else if (rawWA.startsWith('08')) { waFormat = '62' + rawWA.substring(1); } 
+                else if (rawWA.startsWith('62')) { waFormat = rawWA; }
 
                 let waPesan = `Konnichiwa ${lead.nama}! Terima kasih sudah mengakses materi ${lead.tipe} dari MANUTH JAPAN. Jika ada konsultasi gratis tentang program kerja di Jepang, silakan balas pesan ini ya! 🌸`;
                 let waLink = `https://wa.me/${waFormat}?text=${encodeURIComponent(waPesan)}`;
@@ -606,21 +694,21 @@
                 if(isSelesai) selesaiCount++; else pendingCount++;
 
                 let cardClass = isSelesai ? 'crm-data-card selesai' : 'crm-data-card';
-                let badgeHTML = isSelesai ? '<span class="status-badge badge-selesai"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg> Selesai</span>' : '<span class="status-badge badge-pending"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Pending</span>';
+                let badgeHTML = isSelesai ? '<span class="status-badge badge-selesai"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Selesai</span>' : '<span class="status-badge badge-pending"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Pending</span>';
                 let checkDisabled = isSelesai ? 'disabled' : '';
-                let checkIcon = isSelesai ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
+                let checkIcon = isSelesai ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>' : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
 
                 grid.innerHTML += `
                     <div class="${cardClass}" id="card-${lead.row}">
                         ${badgeHTML}
                         <div>
-                            <div class="crm-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${lead.tanggal}</div>
+                            <div class="crm-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${lead.tanggal}</div>
                             <h4>${lead.nama}</h4>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +${waFormat}</div>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Modul: ${lead.tipe}</div>
+                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +${waFormat}</div>
+                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Modul: ${lead.tipe}</div>
                         </div>
                         <div class="crm-actions">
-                            <a href="${waLink}" target="_blank" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Hubungi</a>
+                            <a href="${waLink}" target="_blank" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg> Hubungi</a>
                             <button class="btn-check" onclick="tandaiSelesai(${lead.row})" title="Tandai Selesai" aria-label="Tandai Selesai" ${checkDisabled}>${checkIcon}</button>
                         </div>
                     </div>
