@@ -6,7 +6,7 @@
     <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW). Pusat pelatihan bahasa Jepang dan penempatan tenaga kerja di Surabaya.">
     
     <!-- SECURITY META -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO, CANONICAL, OPEN GRAPH, & TWITTER CARDS -->
@@ -193,40 +193,17 @@
         .swal-form-label { font-weight: 700 !important; font-size: 14px !important; color: var(--deep-indigo) !important; margin-bottom: 8px !important; display: block !important; }
         
         .custom-swal-input { 
-            width: 100% !important; 
-            max-width: 100% !important; 
-            margin: 0 0 20px 0 !important; 
-            padding: 16px 20px !important; 
-            font-size: 16px !important; 
-            font-weight: 600 !important; 
-            color: var(--deep-indigo) !important; 
-            background-color: #F8FAFC !important; 
-            border: 2px solid #CBD5E1 !important; 
-            border-radius: 8px !important; 
-            box-sizing: border-box !important; 
-            transition: all 0.3s ease !important; 
-            box-shadow: none !important; 
-            font-family: 'Montserrat', sans-serif !important; 
-            opacity: 1 !important;
+            width: 100% !important; max-width: 100% !important; margin: 0 0 20px 0 !important; padding: 16px 20px !important; 
+            font-size: 16px !important; font-weight: 600 !important; color: var(--deep-indigo) !important; background-color: #F8FAFC !important; 
+            border: 2px solid #CBD5E1 !important; border-radius: 8px !important; box-sizing: border-box !important; transition: all 0.3s ease !important; 
+            box-shadow: none !important; font-family: 'Montserrat', sans-serif !important; opacity: 1 !important;
         }
         .custom-swal-input::placeholder { color: #94A3B8 !important; font-weight: 400 !important; opacity: 1 !important; }
         .custom-swal-input:focus { outline: none !important; border-color: var(--sakura-pink) !important; background-color: #FFFFFF !important; box-shadow: 0 0 0 4px rgba(255, 141, 161, 0.2) !important; }
         
-        .pin-swal-input {
-            text-align: center !important;
-            font-size: 28px !important;
-            letter-spacing: 12px !important;
-            padding: 15px 10px !important;
-        }
+        .pin-swal-input { text-align: center !important; font-size: 28px !important; letter-spacing: 12px !important; padding: 15px 10px !important; }
 
-        .swal-legal-box { 
-            background-color: var(--soft-ice-blue) !important; 
-            border: 1px solid #BFEBF3 !important; 
-            border-left: 4px solid var(--sakura-pink) !important;
-            padding: 15px !important; 
-            border-radius: 8px !important; 
-            margin-top: 10px !important; 
-        }
+        .swal-legal-box { background-color: var(--soft-ice-blue) !important; border: 1px solid #BFEBF3 !important; border-left: 4px solid var(--sakura-pink) !important; padding: 15px !important; border-radius: 8px !important; margin-top: 10px !important; }
         .swal-legal-text { font-size: 12px !important; color: #334155 !important; line-height: 1.6 !important; margin: 0 !important; font-weight: 500 !important; text-align: left !important; }
 
         /* ==========================================================================
@@ -488,6 +465,28 @@
             Swal.fire({ title: artikel.judul, html: `<img src="${artikel.gambar}" class="swal-article-img" onerror="this.src='https://via.placeholder.com/800x400'"><div class="swal-article-text">${artikel.konten}</div>`, width: '800px', customClass: { popup: 'swal-wide', title: 'news-title' }, showCloseButton: true, showConfirmButton: false, background: '#FFFFFF' });
         }
 
+        // ==========================================================================
+        // MESIN BYPASS JSONP (Senjata Pamungkas Lawan CORS)
+        // ==========================================================================
+        function fetchJSONP(url, params) {
+            return new Promise((resolve, reject) => {
+                const callbackName = 'jsonp_callback_' + Math.round(100000 * Math.random());
+                window[callbackName] = function(data) {
+                    delete window[callbackName];
+                    document.body.removeChild(script);
+                    resolve(data);
+                };
+                const script = document.createElement('script');
+                script.src = `${url}?${new URLSearchParams(params).toString()}&callback=${callbackName}`;
+                script.onerror = () => {
+                    delete window[callbackName];
+                    document.body.removeChild(script);
+                    reject(new Error('Network Error'));
+                };
+                document.body.appendChild(script);
+            });
+        }
+
         function triggerLeadMagnet(tipeAkses) {
             Swal.fire({
                 title: 'Dapatkan Akses Gratis!',
@@ -524,33 +523,10 @@
         function prosesKirimData(data) {
             Swal.fire({ title: 'Memproses Data...', html: 'Mohon tunggu sebentar.', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
             
-            fetch(GAS_URL, { 
-                method: 'POST', 
-                body: JSON.stringify(data) 
-            })
-            .then(res => res.text())
-            .then(text => {
-                if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
-                try {
-                    let response = JSON.parse(text);
-                    if(response.status === 'success') { tampilkanSukses(data); } 
-                    else { throw new Error(response.message || 'Gagal menyimpan'); }
-                } catch(e) {
-                    throw new Error('JSON_PARSE_ERROR');
-                }
-            })
-            .catch(error => { 
-                if (error.message === 'CORS_AUTH' || error.message === 'Failed to fetch') {
-                    Swal.fire({
-                        title: 'Blokir Keamanan Google',
-                        html: '<div style="text-align:left; font-size:14px; line-height:1.6;"><p>Google menolak koneksi. <b>SOP PERBAIKAN:</b></p>1. Buka file Google Script.<br>2. Klik <b>Terapkan</b> (Deploy) -> <b>Kelola Deployment</b>.<br>3. Edit & pilih <b>Versi Baru</b>.<br>4. Ubah "Yang memiliki akses" menjadi <b>"Siapa saja" (Anyone)</b>.<br>5. Klik Terapkan dan coba lagi.</div>',
-                        icon: 'error',
-                        confirmButtonColor: '#0A2540'
-                    });
-                } else {
-                    Swal.fire('Terjadi Kesalahan', 'Sedang ada antrean sistem, mohon coba 1 menit lagi.', 'error'); 
-                }
-            });
+            fetchJSONP(GAS_URL, data).then(response => {
+                if(response.status === 'success') { tampilkanSukses(data); } 
+                else { throw new Error(response.message || 'Gagal menyimpan'); }
+            }).catch(error => { Swal.fire('Terjadi Kesalahan', 'Gagal memanggil server. Pastikan URL Script benar.', 'error'); });
         }
 
         function tampilkanSukses(data) {
@@ -590,10 +566,8 @@
                 if (result.isConfirmed) { 
                     Swal.fire({ title: 'Mengautentikasi...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } }); 
                     
-                    fetch(GAS_URL, { 
-                        method: 'POST', 
-                        body: JSON.stringify({ action: 'login', pin: result.value }) 
-                    })
+                    const params = new URLSearchParams({ action: 'login', pin: result.value }).toString();
+                    fetch(`${GAS_URL}?${params}`, { method: 'GET' })
                     .then(res => res.text())
                     .then(text => {
                         if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
@@ -662,10 +636,8 @@
                 if (result.isConfirmed) {
                     Swal.fire({ title: 'Memperbarui...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); }});
                     
-                    fetch(GAS_URL, { 
-                        method: 'POST', 
-                        body: JSON.stringify({ action: 'update', row: rowId }) 
-                    })
+                    const params = new URLSearchParams({ action: 'update', row: rowId }).toString();
+                    fetch(`${GAS_URL}?${params}`, { method: 'GET' })
                     .then(res => res.text())
                     .then(text => {
                         if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
