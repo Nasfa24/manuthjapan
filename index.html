@@ -5,15 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW). Pusat pelatihan bahasa Jepang dan penempatan tenaga kerja di Surabaya.">
     
-    <!-- ==========================================================================
-         SECURITY META (Garis Pertahanan Pertama Frontend)
-         ========================================================================== -->
+    <!-- SECURITY META -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- ==========================================================================
-         SEO, CANONICAL, OPEN GRAPH, & TWITTER CARDS
-         ========================================================================== -->
+    <!-- SEO, CANONICAL, OPEN GRAPH, & TWITTER CARDS -->
     <link rel="canonical" href="https://manuthjapan.com/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="MANUTH JAPAN - Solusi Kerja Resmi ke Jepang">
@@ -185,7 +181,7 @@
         @media (max-width: 992px) { .news-editorial-layout { grid-template-columns: 1fr; } .news-side { flex-direction: column; } .news-side .news-img { width: 100%; height: 200px; border-right: none; border-bottom: 4px solid var(--sakura-pink); } .news-side .news-body { width: 100%; } }
 
         /* ==========================================================================
-           8. SWEETALERT2 CUSTOM FORM STYLING (BOIL THE OCEAN UPGRADE)
+           8. SWEETALERT2 CUSTOM FORM STYLING (THE BOIL THE OCEAN UPGRADE)
            ========================================================================== */
         body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) { overflow: hidden !important; }
         .swal2-container { z-index: 99999 !important; }
@@ -216,6 +212,14 @@
         .custom-swal-input::placeholder { color: #94A3B8 !important; font-weight: 400 !important; opacity: 1 !important; }
         .custom-swal-input:focus { outline: none !important; border-color: var(--sakura-pink) !important; background-color: #FFFFFF !important; box-shadow: 0 0 0 4px rgba(255, 141, 161, 0.2) !important; }
         
+        /* Khusus Input PIN Admin - Tengah, Besar, Berjarak */
+        .pin-swal-input {
+            text-align: center !important;
+            font-size: 28px !important;
+            letter-spacing: 12px !important;
+            padding: 15px 10px !important;
+        }
+
         .swal-legal-box { 
             background-color: var(--soft-ice-blue) !important; 
             border: 1px solid #BFEBF3 !important; 
@@ -519,19 +523,36 @@
         }
 
         function prosesKirimData(data) {
-            // Bypass CORS Preflight
+            Swal.fire({ title: 'Memproses Data...', html: 'Mohon tunggu sebentar.', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } });
+            
             fetch(GAS_URL, { 
                 method: 'POST', 
-                mode: 'no-cors', // Paksa mode no-cors agar tidak dicekal browser
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                headers: { "Content-Type": "text/plain;charset=utf-8" },
                 body: JSON.stringify(data) 
             })
-            .then(res => {
-                // Karena mode no-cors, kita tidak bisa membaca response JSON dengan aman
-                // Asumsikan berhasil jika tidak masuk ke catch
-                tampilkanSukses(data);
+            .then(res => res.text())
+            .then(text => {
+                if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
+                try {
+                    let response = JSON.parse(text);
+                    if(response.status === 'success') { tampilkanSukses(data); } 
+                    else { throw new Error(response.message || 'Gagal menyimpan'); }
+                } catch(e) {
+                    throw new Error('JSON_PARSE_ERROR');
+                }
             })
-            .catch(error => { Swal.fire('Terjadi Kesalahan', 'Sedang ada antrean sistem, mohon coba 1 menit lagi.', 'error'); });
+            .catch(error => { 
+                if (error.message === 'CORS_AUTH' || error.message === 'Failed to fetch') {
+                    Swal.fire({
+                        title: 'Blokir Keamanan Google',
+                        html: '<div style="text-align:left; font-size:14px; line-height:1.6;"><p>Google menolak koneksi. <b>SOP PERBAIKAN:</b></p>1. Buka file Google Script.<br>2. Klik <b>Terapkan</b> (Deploy) -> <b>Kelola Deployment</b>.<br>3. Edit & pilih <b>Versi Baru</b>.<br>4. Ubah "Yang memiliki akses" menjadi <b>"Siapa saja" (Anyone)</b>.<br>5. Klik Terapkan dan coba lagi.</div>',
+                        icon: 'error',
+                        confirmButtonColor: '#0A2540'
+                    });
+                } else {
+                    Swal.fire('Terjadi Kesalahan', 'Sedang ada antrean sistem, mohon coba 1 menit lagi.', 'error'); 
+                }
+            });
         }
 
         function tampilkanSukses(data) {
@@ -557,28 +578,44 @@
         function bukaPintuRahasia() {
             Swal.fire({ 
                 title: 'Otorisasi Admin', 
-                input: 'password', 
-                inputPlaceholder: 'Masukkan PIN Rahasia', 
+                html: '<p style="color:var(--slate-grey); font-size:14px; margin-bottom:15px;">Masukkan 6 digit PIN untuk mengakses pusat kendali.</p><input type="password" id="swal-pin" class="swal2-input custom-swal-input pin-swal-input" placeholder="••••••" aria-label="PIN Akses">',
                 confirmButtonText: 'Akses CRM', 
                 confirmButtonColor: '#0A2540',
-                customClass: { input: 'custom-swal-input' }
+                background: '#FFFFFF',
+                customClass: { popup: 'swal2-popup', title: 'swal2-title', confirmButton: 'btn-cta' },
+                preConfirm: () => {
+                    const pin = document.getElementById('swal-pin').value;
+                    if (!pin) { Swal.showValidationMessage('PIN tidak boleh kosong'); return false; }
+                    return pin;
+                }
             }).then((result) => {
-                if (result.value) { 
+                if (result.isConfirmed) { 
                     Swal.fire({ title: 'Mengautentikasi...', allowOutsideClick: false, didOpen: () => { Swal.showLoading(); } }); 
                     
-                    // Endpoint CRM tidak menggunakan no-cors agar kita bisa menerima data balikan
                     fetch(GAS_URL, { 
                         method: 'POST', 
-                        redirect: "follow",
                         headers: { "Content-Type": "text/plain;charset=utf-8" },
                         body: JSON.stringify({ action: 'login', pin: result.value }) 
                     })
-                    .then(res => res.json())
-                    .then(response => {
+                    .then(res => res.text())
+                    .then(text => {
+                        if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
+                        let response = JSON.parse(text);
                         if(response.status === 'success') { renderCRM(response.data); Swal.close(); } 
                         else { Swal.fire('Akses Ditolak', response.message, 'error'); }
                     })
-                    .catch(error => { Swal.fire('Error Koneksi', 'Tidak dapat terhubung ke server Google.', 'error'); });
+                    .catch(error => { 
+                        if (error.message === 'CORS_AUTH' || error.message === 'Failed to fetch') {
+                            Swal.fire({
+                                title: 'Blokir Keamanan Google',
+                                html: '<div style="text-align:left; font-size:14px; line-height:1.6;"><p>Google menolak memberikan data. Ini <b>bukan</b> karena Cloudflare, melainkan pengaturan privasi di Google Script Anda.</p><b>SOP PERBAIKAN:</b><br>1. Buka file Google Script.<br>2. Klik <b>Terapkan</b> (Deploy) -> <b>Kelola Deployment</b>.<br>3. Klik ikon <b>Pensil</b> (Edit).<br>4. Ubah Versi menjadi <b>Versi Baru</b>.<br>5. Pastikan "Yang memiliki akses" (Who has access) diset ke: <b>"Siapa saja" (Anyone)</b>.<br>6. Klik Terapkan dan coba lagi di sini.</div>',
+                                icon: 'error',
+                                confirmButtonColor: '#0A2540'
+                            });
+                        } else {
+                            Swal.fire('Error Koneksi', 'Tidak dapat terhubung ke server Google.', 'error'); 
+                        }
+                    });
                 }
             });
         }
@@ -630,17 +667,25 @@
                     
                     fetch(GAS_URL, { 
                         method: 'POST', 
-                        redirect: "follow",
                         headers: { "Content-Type": "text/plain;charset=utf-8" },
                         body: JSON.stringify({ action: 'update', row: rowId }) 
                     })
-                    .then(res => res.json())
-                    .then(response => {
+                    .then(res => res.text())
+                    .then(text => {
+                        if (text.includes('<html') || text.includes('Sign in')) throw new Error('CORS_AUTH');
+                        let response = JSON.parse(text);
                         if(response.status === 'success') { 
                             let card = document.getElementById(`card-${rowId}`);
                             card.classList.add('selesai');
                             card.querySelector('.btn-check').innerText = '✓';
                             Swal.fire('Berhasil!', 'Status telah diperbarui.', 'success'); 
+                        }
+                    })
+                    .catch(error => { 
+                        if (error.message === 'CORS_AUTH' || error.message === 'Failed to fetch') {
+                             Swal.fire('Blokir Keamanan Google', 'Akses ditolak oleh Google.', 'error');
+                        } else {
+                             Swal.fire('Error', 'Gagal memperbarui status.', 'error'); 
                         }
                     });
                 }
