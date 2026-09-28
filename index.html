@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="MANUTH JAPAN - Lowongan Kerja Resmi ke Jepang. Program Magang dan Tokutei Ginou (SSW). Pusat pelatihan bahasa Jepang dan penempatan tenaga kerja di Surabaya.">
     
+    <!-- RESOLUSI B85: DNS PREFETCH & PRECONNECT (MENGHANCURKAN LATENSI PENCARIAN DNS) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+
+    <!-- RESOLUSI F34 & D67: BROWSER CACHE CONTROL FALLBACK -->
+    <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
+
     <!-- PRELOAD HERO IMAGE (PRIORITAS TINGGI UNTUK LCP < 2.5 DETIK) -->
     <link rel="preload" as="image" href="japan 1.webp" fetchpriority="high">
 
@@ -31,17 +44,15 @@
     <link rel="icon" type="image/webp" sizes="512x512" href="favicon-512.webp">
     <link rel="apple-touch-icon" href="favicon-512.webp">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- B84: FONT DIMUAT SECARA ASINKRON / PRELOAD -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"></noscript>
     
-    <!-- SweetAlert2 -->
+    <!-- SweetAlert2 CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
-    <!-- GA4 EVENT TRACKING -->
+    <!-- GA4 EVENT TRACKING (Wajib Async) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-8Y0240JSRR"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -118,8 +129,6 @@
            ========================================================================== */
         .navbar { position: sticky; top: 0; background-color: var(--clean-slate); padding: 10px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 4px 6px rgba(10, 37, 64, 0.05); z-index: 1000; }
         .logo { display: flex; align-items: center; text-decoration: none; }
-        
-        /* LOGO NAVBAR: Rasio 1:1 Persegi Sempurna (Resolusi Tinggi) */
         .logo img { height: 85px; width: 85px; object-fit: contain; transition: transform 0.3s ease; }
         .logo img:hover { transform: scale(1.05); }
 
@@ -172,8 +181,6 @@
         .testi-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(10, 37, 64, 0.12); }
         .testi-header { display: flex; align-items: center; gap: 15px; }
         .testi-avatar { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--warm-gold); background-color: var(--soft-ice-blue); }
-        
-        /* UPDATE: Heading H3 untuk memenuhi standard SEO */
         .testi-name { color: var(--deep-indigo); font-size: 16px; font-weight: 700; margin-bottom: 2px; }
         .testi-info span { color: var(--slate-grey); font-size: 13px; font-weight: 500; }
         .testi-stars { color: var(--warm-gold); font-size: 18px; letter-spacing: 2px; }
@@ -302,8 +309,6 @@
         footer { background-color: var(--deep-indigo); color: var(--clean-slate); padding: 60px 5% 30px; }
         .footer-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; max-width: 1200px; margin: 0 auto 40px; text-align: left; align-items: center;}
         .footer-info { display: flex; flex-direction: column; gap: 15px; }
-        
-        /* LOGO FOOTER: Rasio 1:1 Persegi Sempurna (Ukuran Eksekutif) */
         .footer-logo { height: 120px; width: 120px; object-fit: contain; margin-bottom: 15px; cursor: pointer; background-color: var(--clean-slate); padding: 15px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.4); transition: transform 0.3s; }
         .footer-logo:hover { transform: scale(1.05); }
 
@@ -335,7 +340,6 @@
         }
         @media (max-width: 768px) { 
             .footer-grid { grid-template-columns: 1fr; text-align: center; } 
-            /* Logo di HP Disesuaikan agar proporsional */
             .footer-logo { margin: 0 auto 20px; height: 100px; width: 100px; } 
             .logo img { height: 75px; width: 75px; }
             
@@ -345,11 +349,12 @@
         }
     </style>
 </head>
-<body>
+<body id="beranda">
     <main>
         <!-- NAVBAR & HERO -->
         <nav class="navbar">
-            <a href="#" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.webp" alt="Logo MANUTH JAPAN" width="85" height="85"></a>
+            <a href="#beranda" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.webp" alt="Logo MANUTH JAPAN" width="85" height="85"></a>
+            <!-- Tombol CTA Navigasi disembunyikan di HP karena digantikan oleh Sticky Bar -->
             <a href="#lead-magnet" class="btn-cta" style="display: var(--nav-cta-display, flex);" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Nav Bar CTA' });">Belajar Gratis</a>
         </nav>
 
@@ -568,7 +573,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- JAVASCRIPT LOGIC (Ditunda ke bawah untuk Optimasi A100) -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
