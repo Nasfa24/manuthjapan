@@ -109,10 +109,13 @@
         /* ==========================================================================
            2. KOMPONEN UMUM
            ========================================================================== */
-        .btn-cta { background-color: var(--sakura-pink); color: var(--deep-indigo); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 800; font-size: 16px; cursor: pointer; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 141, 161, 0.4); transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s; min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-cta { background-color: var(--sakura-pink); color: var(--deep-indigo); padding: 12px 24px; border: none; border-radius: 8px; font-weight: 800; font-size: 16px; cursor: pointer; text-decoration: none; box-shadow: 0 4px 15px rgba(255, 141, 161, 0.4); transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s, border-color 0.2s; min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
         .btn-cta:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 141, 161, 0.6); }
         .btn-cta:active:not(:disabled) { transform: translateY(0); }
         .btn-cta:disabled { opacity: 0.7; cursor: not-allowed; background-color: var(--slate-grey); box-shadow: none; color: var(--clean-slate); }
+        
+        .btn-secondary { background-color: transparent; border: 2px solid var(--clean-slate); color: var(--clean-slate); box-shadow: none; }
+        .btn-secondary:hover:not(:disabled) { background-color: var(--clean-slate); color: var(--deep-indigo); box-shadow: 0 6px 20px rgba(255, 255, 255, 0.3); }
 
         .section-container { padding: 80px 5%; background-color: var(--clean-slate); }
         .bg-light-blue { background-color: var(--soft-ice-blue); }
@@ -135,6 +138,7 @@
         .hero { background: linear-gradient(rgba(10, 37, 64, 0.7), rgba(10, 37, 64, 0.85)), url('japan 1.webp') center/cover no-repeat; padding: 120px 5% 100px; text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--clean-slate); }
         .hero h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 800; margin-bottom: 20px; max-width: 800px; color: var(--clean-slate); text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .hero p { font-size: clamp(16px, 2vw, 20px); font-weight: 500; margin-bottom: 40px; max-width: 700px; opacity: 0.95; color: var(--clean-slate); text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+        .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
 
         .bg-langkah { background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.95)), url('japan 2.webp') center/cover fixed no-repeat; }
         .bg-program { background: linear-gradient(rgba(224, 247, 250, 0.85), rgba(224, 247, 250, 0.95)), url('japan 3.webp') center/cover fixed no-repeat; }
@@ -354,14 +358,18 @@
         <!-- NAVBAR & HERO -->
         <nav class="navbar">
             <a href="#beranda" class="logo" aria-label="Beranda MANUTH JAPAN"><img src="logo 1.webp" alt="Logo MANUTH JAPAN" width="85" height="85"></a>
-            <!-- Tombol CTA Navigasi disembunyikan di HP karena digantikan oleh Sticky Bar -->
             <a href="#lead-magnet" class="btn-cta" style="display: var(--nav-cta-display, flex);" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Nav Bar CTA' });">Belajar Gratis</a>
         </nav>
 
         <section class="hero">
             <h1>LOWONGAN KERJA RESMI KE JEPANG!</h1>
             <p>Ubah masa depan Anda melalui program Visa Magang & Tokutei Ginou (SSW). Proses transparan, pelatihan intensif, dan penempatan kerja pasti.</p>
-            <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
+            
+            <!-- UPDATE: Injeksi Tombol Unduh Brosur ke Halaman Depan -->
+            <div class="hero-buttons">
+                <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
+                <button class="btn-cta btn-secondary" style="font-size: 18px; padding: 15px 40px;" onclick="gtag('event', 'click', {'event_category': 'brochure', 'event_label': 'Hero CTA'}); triggerLeadMagnet('brosur');">Unduh Brosur</button>
+            </div>
         </section>
 
         <!-- ALUR KEBERANGKATAN -->
@@ -573,7 +581,7 @@
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC (Ditunda ke bawah untuk Optimasi A100) -->
+    <!-- JAVASCRIPT LOGIC -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
@@ -616,6 +624,9 @@
             return `<img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." width="60" height="60">`;
         }
 
+        // ==========================================================================
+        // UPDATE: LOGIKA LEAD MAGNET DENGAN PENAMBAHAN BROSUR
+        // ==========================================================================
         function triggerLeadMagnet(tipeAkses) {
             Swal.fire({
                 title: 'Dapatkan Akses Gratis!',
@@ -647,7 +658,7 @@
                 }
             }).then((result) => { 
                 if (result.isConfirmed && result.value) { 
-                    if(typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement' });
+                    if(typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': tipeAkses });
                     prosesKirimData(result.value); 
                 } 
             });
@@ -658,14 +669,22 @@
             try {
                 await fetchAPI(data);
                 Swal.fire({ icon: 'success', title: 'Berhasil!', text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`, confirmButtonText: 'Buka Sekarang', confirmButtonColor: '#FF8DA1' }).then(() => {
+                    // Penanganan pengalihan sesuai dengan "tipe" leads
                     if (data.tipe === 'apps') { 
                         document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" title="Aplikasi Gampang Jepang"></iframe></div>`;
-                    } else if (data.tipe === 'materi') { window.open('https://drive.google.com/', '_blank'); }
+                    } 
+                    else if (data.tipe === 'materi') { 
+                        window.open('https://drive.google.com/', '_blank'); 
+                    } 
+                    else if (data.tipe === 'brosur') { 
+                        window.open('https://drive.google.com/file/d/1K0beKtHEjljeYfWngaPDSS1F3h1m17dc/view?usp=sharing', '_blank'); 
+                    }
                 });
             } catch (error) { Swal.fire('Kesalahan', error.message, 'error'); }
         }
 
         window.addEventListener('DOMContentLoaded', () => {
+            // CRM Autologin
             let savedPin = sessionStorage.getItem('manuth_crm_token');
             if (savedPin) { 
                 document.getElementById('crm-overlay').style.display = 'block';
@@ -673,6 +692,36 @@
                 document.getElementById('crm-loading-container').style.display = 'block';
                 document.body.style.overflow = 'hidden';
                 prosesLoginCRM(savedPin, true); 
+            }
+
+            // ==========================================================================
+            // UPDATE: LOGIKA AUTO POP-UP BROSUR PINTAR (TIME DELAY + ANTI-SPAM)
+            // ==========================================================================
+            if (!sessionStorage.getItem('brosur_offered') && !sessionStorage.getItem('manuth_crm_token')) {
+                // Menunggu 12 detik sebelum menawarkan brosur agar tidak mengganggu kesan pertama pengunjung
+                setTimeout(() => {
+                    // Jangan memunculkan pop up jika pengguna sedang melihat pop up lain
+                    if (!Swal.isVisible()) {
+                        Swal.fire({
+                            title: 'Tertarik ke Jepang?',
+                            text: 'Unduh Brosur Resmi MANUTH JAPAN 2026 yang berisi detail program, biaya, dan fasilitas.',
+                            imageUrl: 'logo 1.webp',
+                            imageWidth: 100,
+                            showCancelButton: true,
+                            confirmButtonColor: '#FF8DA1',
+                            cancelButtonColor: '#94A3B8',
+                            confirmButtonText: 'Ya, Unduh Gratis',
+                            cancelButtonText: 'Nanti Saja',
+                            customClass: { confirmButton: 'btn-cta' }
+                        }).then((result) => {
+                            // Tandai browser ini agar tidak memunculkan Pop Up lagi di sesi ini
+                            sessionStorage.setItem('brosur_offered', 'true');
+                            if (result.isConfirmed) {
+                                triggerLeadMagnet('brosur');
+                            }
+                        });
+                    }
+                }, 12000);
             }
         });
 
