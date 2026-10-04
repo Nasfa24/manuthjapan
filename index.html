@@ -10,10 +10,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://connect.facebook.net">
     <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://fonts.gstatic.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://connect.facebook.net">
 
     <!-- RESOLUSI F34 & D67: BROWSER CACHE CONTROL FALLBACK -->
     <meta http-equiv="Cache-Control" content="public, max-age=604800, immutable">
@@ -21,8 +23,8 @@
     <!-- PRELOAD HERO IMAGE (PRIORITAS TINGGI UNTUK LCP < 2.5 DETIK) -->
     <link rel="preload" as="image" href="japan 1.webp" fetchpriority="high">
 
-    <!-- SECURITY META -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net https://script.google.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/ https://www.google.com/maps/;">
+    <!-- SECURITY META (Diperbarui untuk mengizinkan injeksi skrip Facebook Pixel) -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://cdn.jsdelivr.net https://script.google.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-src https://gampangjepang.netlify.app/ https://www.google.com/maps/;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- SEO, CANONICAL, OPEN GRAPH, & TWITTER CARDS -->
@@ -91,6 +93,24 @@
       }
     ]
     </script>
+
+    <!-- Facebook Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1162276126407166');
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+    <img height="1" width="1" src="https://www.facebook.com/tr?id=1162276126407166&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 
     <style>
         /* ==========================================================================
@@ -365,7 +385,6 @@
             <h1>LOWONGAN KERJA RESMI KE JEPANG!</h1>
             <p>Ubah masa depan Anda melalui program Visa Magang & Tokutei Ginou (SSW). Proses transparan, pelatihan intensif, dan penempatan kerja pasti.</p>
             
-            <!-- UPDATE: Injeksi Tombol Unduh Brosur ke Halaman Depan -->
             <div class="hero-buttons">
                 <a href="#program" class="btn-cta" style="font-size: 18px; padding: 15px 40px;">Lihat Program</a>
                 <button class="btn-cta btn-secondary" style="font-size: 18px; padding: 15px 40px;" onclick="gtag('event', 'click', {'event_category': 'brochure', 'event_label': 'Hero CTA'}); triggerLeadMagnet('brosur');">Unduh Brosur</button>
@@ -668,8 +687,13 @@
             Swal.fire({ title: 'Memproses Data...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
             try {
                 await fetchAPI(data);
+                
+                // TRIGGER FACEBOOK PIXEL LEAD EVENT
+                if(typeof fbq === 'function') {
+                    fbq('track', 'Lead');
+                }
+
                 Swal.fire({ icon: 'success', title: 'Berhasil!', text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`, confirmButtonText: 'Buka Sekarang', confirmButtonColor: '#FF8DA1' }).then(() => {
-                    // Penanganan pengalihan sesuai dengan "tipe" leads
                     if (data.tipe === 'apps') { 
                         document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" title="Aplikasi Gampang Jepang"></iframe></div>`;
                     } 
@@ -684,7 +708,6 @@
         }
 
         window.addEventListener('DOMContentLoaded', () => {
-            // CRM Autologin
             let savedPin = sessionStorage.getItem('manuth_crm_token');
             if (savedPin) { 
                 document.getElementById('crm-overlay').style.display = 'block';
@@ -694,13 +717,8 @@
                 prosesLoginCRM(savedPin, true); 
             }
 
-            // ==========================================================================
-            // UPDATE: LOGIKA AUTO POP-UP BROSUR PINTAR (TIME DELAY + ANTI-SPAM)
-            // ==========================================================================
             if (!sessionStorage.getItem('brosur_offered') && !sessionStorage.getItem('manuth_crm_token')) {
-                // Menunggu 12 detik sebelum menawarkan brosur agar tidak mengganggu kesan pertama pengunjung
                 setTimeout(() => {
-                    // Jangan memunculkan pop up jika pengguna sedang melihat pop up lain
                     if (!Swal.isVisible()) {
                         Swal.fire({
                             title: 'Tertarik ke Jepang?',
@@ -714,7 +732,6 @@
                             cancelButtonText: 'Nanti Saja',
                             customClass: { confirmButton: 'btn-cta' }
                         }).then((result) => {
-                            // Tandai browser ini agar tidak memunculkan Pop Up lagi di sesi ini
                             sessionStorage.setItem('brosur_offered', 'true');
                             if (result.isConfirmed) {
                                 triggerLeadMagnet('brosur');
