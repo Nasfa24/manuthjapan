@@ -129,9 +129,11 @@
         .section-title { text-align: center; font-size: clamp(28px, 4vw, 36px); margin-bottom: 20px; color: var(--deep-indigo); font-weight: 900; line-height: 1.2; position: relative; z-index: 2;}
         .section-subtitle { text-align: center; margin-bottom: 50px; color: #475569; font-weight: 500; font-size: clamp(16px, 2vw, 18px); max-width: 800px; margin-left: auto; margin-right: auto; position: relative; z-index: 2;}
 
+        /* UTILITY: DARK BACKGROUND FIX CONTRAST */
         .bg-dark .section-title { color: var(--clean-slate); text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
         .bg-dark .section-subtitle { color: #E2E8F0; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
 
+        /* INJEKSI BACKGROUND GAMBAR SESUAI PERMINTAAN */
         .bg-program { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.95)), url('japan 3.webp') center/cover fixed no-repeat; }
         .bg-jlpt { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.92)), url('berita 1.webp') center/cover fixed no-repeat; }
         .bg-finansial { background: linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.95)), url('japan 4.webp') center/cover fixed no-repeat; }
@@ -198,13 +200,14 @@
         .icon-cross { color: var(--ruby); flex-shrink: 0; width: 20px; height: 20px; }
         .icon-warn { color: var(--amber); flex-shrink: 0; width: 20px; height: 20px; }
 
+        /* Desain Glassmorphism untuk Kotak Persyaratan (Dark Mode) */
         .req-box { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); border-radius: 16px; padding: 30px; max-width: 900px; margin: 50px auto 0; border: 1px solid rgba(255,255,255,0.1); position: relative; z-index: 2;}
         .req-box h4 { text-align: center; color: var(--clean-slate); font-size: 20px; font-weight: 800; margin-bottom: 20px; }
         .req-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
         .req-item { display: flex; align-items: flex-start; gap: 10px; font-weight: 500; font-size: 14px; color: #E2E8F0; line-height: 1.4;}
 
         /* ==========================================================================
-           6. BENTO BOX UI: BIDANG KERJA SSW
+           6. BENTO BOX UI: BIDANG KERJA SSW (NEW DESIGN)
            ========================================================================== */
         .ssw-bento { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;}
         .bento-card { background: white; border-radius: 24px; padding: 35px 20px; text-align: center; box-shadow: 0 10px 30px rgba(10, 37, 64, 0.04); border: 1px solid #F1F5F9; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; z-index: 1; overflow: hidden; }
@@ -258,6 +261,7 @@
         .fin-income .fin-item strong { color: var(--emerald); }
         .fin-expense .fin-item strong { color: var(--ruby); }
 
+        /* Desain Glassmorphism untuk Kotak Total (Dark Mode) */
         .fin-total-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(15px); color: white; border-radius: 20px; padding: 40px; text-align: center; margin-top: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); max-width: 1000px; margin-left: auto; margin-right: auto; position: relative; z-index: 2; border: 1px solid rgba(255,255,255,0.2);}
         .fin-total-card span { font-size: 18px; font-weight: 500; opacity: 0.9; text-transform: uppercase; letter-spacing: 1px;}
         .fin-total-card h3 { font-size: clamp(36px, 5vw, 48px); font-weight: 900; color: var(--warm-gold); margin-top: 10px; text-shadow: 0 2px 10px rgba(0,0,0,0.3);}
@@ -315,15 +319,6 @@
         .read-more { color: var(--deep-indigo); font-weight: 700; font-size: 14px; text-decoration: none; border-bottom: 2px solid var(--sakura-pink); padding-bottom: 3px; width: fit-content; transition: color 0.3s; }
         .news-card:hover .read-more { color: var(--sakura-pink); }
 
-        .faq-container { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-        .faq-item { background: var(--clean-slate); border: 2px solid #F1F5F9; border-radius: 12px; overflow: hidden; transition: all 0.3s; }
-        .faq-item:hover { border-color: var(--sakura-pink); box-shadow: 0 4px 15px rgba(255,141,161,0.1); }
-        .faq-question { width: 100%; text-align: left; padding: 20px 25px; background: none; border: none; font-weight: 700; font-size: 16px; color: var(--deep-indigo); cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-question::after { content: '+'; font-size: 24px; color: var(--sakura-pink); transition: transform 0.3s; }
-        .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s ease; background: #F8FAFC; color: #475569; font-weight: 500; }
-        .faq-item.active .faq-question::after { transform: rotate(45deg); }
-        .faq-item.active .faq-answer { padding: 20px 25px; max-height: 300px; border-top: 1px solid #F1F5F9; }
-
         body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) { overflow: hidden !important; }
         .swal2-container { z-index: 99999 !important; }
         .swal2-popup { border-radius: 20px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important; background: #FFFFFF !important; }
@@ -334,8 +329,6 @@
         .custom-swal-input { width: 100% !important; max-width: 100% !important; margin: 0 0 20px 0 !important; padding: 16px 20px !important; font-size: 16px !important; font-weight: 600 !important; color: var(--deep-indigo) !important; background-color: #F8FAFC !important; border: 2px solid #CBD5E1 !important; border-radius: 8px !important; box-sizing: border-box !important; transition: all 0.3s ease !important; box-shadow: none !important; font-family: 'Montserrat', sans-serif !important; opacity: 1 !important; }
         .custom-swal-input:focus { outline: none !important; border-color: var(--sakura-pink) !important; background-color: #FFFFFF !important; box-shadow: 0 0 0 4px rgba(255, 141, 161, 0.2) !important; }
         .pin-swal-input { text-align: center !important; font-size: 28px !important; letter-spacing: 12px !important; padding: 15px 10px !important; }
-        .swal-legal-box { background-color: var(--soft-ice-blue) !important; border: 1px solid #BFEBF3 !important; border-left: 4px solid var(--sakura-pink) !important; padding: 15px !important; border-radius: 8px !important; margin-top: 10px !important; }
-        .swal-legal-text { font-size: 12px !important; color: #334155 !important; line-height: 1.6 !important; margin: 0 !important; font-weight: 500 !important; text-align: left !important; }
         .swal-wide { width: 800px !important; }
         .hp-trap { position: absolute; left: -9999px; top: -9999px; opacity: 0; z-index: -1; }
 
@@ -564,7 +557,7 @@
                     <p>Layanan Kamar & Resepsionis</p>
                 </div>
                 <div class="bento-card">
-                    <div class="bento-icon-wrap">🏗️️</div>
+                    <div class="bento-icon-wrap">🏗️</div>
                     <h4>Konstruksi</h4>
                     <p>Sipil & Pembangunan Infrastruktur</p>
                 </div>
@@ -698,61 +691,6 @@
             </div>
         </section>
 
-        <!-- NEWS & ARTICLE -->
-        <section class="section-container">
-            <h2 class="section-title">News & Article</h2>
-            <p class="section-subtitle">Pembaruan resmi dan informasi terkini dari MANUTH JAPAN.</p>
-            <div class="news-editorial-layout">
-                <div class="news-card news-main" onclick="bukaArtikel(1)" role="button" tabindex="0" aria-label="Baca Artikel MANUTH JAPAN Umumkan Rebranding">
-                    <img src="berita 1.webp" alt="Ilustrasi Rebranding Manuth Japan" class="news-img" width="800" height="350" loading="lazy" onerror="this.src='https://via.placeholder.com/800x400'">
-                    <div class="news-body">
-                        <span class="news-tag">Press Release</span>
-                        <h3 class="news-title">MANUTH JAPAN Umumkan Rebranding, Perkuat Posisi Solusi Terpadu Kerja Jepang</h3>
-                        <p class="news-snippet">Langkah strategis ini mencakup pengenalan identitas visual baru dan enam alur fasilitasi keberangkatan untuk efisiensi penempatan tenaga kerja.</p>
-                        <span class="read-more">Baca Selengkapnya &rarr;</span>
-                    </div>
-                </div>
-                <div class="news-side-stack">
-                    <div class="news-card news-side" onclick="bukaArtikel(2)" role="button" tabindex="0" aria-label="Baca Artikel Pendaftaran SSW">
-                        <img src="berita 2.webp" alt="Ilustrasi Pendaftaran SSW" class="news-img" width="400" height="200" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
-                        <div class="news-body">
-                            <span class="news-tag">Program Resmi</span>
-                            <h3 class="news-title">Buka Pendaftaran SSW, Bidik Kuota 850.000 Pekerja</h3>
-                            <p class="news-snippet">Lulusan SMA/SMK berpeluang mendapatkan gaji hingga Rp24 juta per bulan dengan hak setara pekerja lokal.</p>
-                            <span class="read-more">Baca Selengkapnya &rarr;</span>
-                        </div>
-                    </div>
-                    <div class="news-card news-side" onclick="bukaArtikel(3)" role="button" tabindex="0" aria-label="Baca Artikel Magang Jepang">
-                        <img src="berita 3.webp" alt="Ilustrasi Magang Jepang" class="news-img" width="400" height="200" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400'">
-                        <div class="news-body">
-                            <span class="news-tag">Inovasi Layanan</span>
-                            <h3 class="news-title">Jalur Cepat Magang Jepang Bergaji Belasan Juta</h3>
-                            <p class="news-snippet">Program Ginou Jishusei tanpa syarat sertifikat bahasa menargetkan lulusan SMA/SMK untuk percepatan serapan kerja.</p>
-                            <span class="read-more">Baca Selengkapnya &rarr;</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ SECTION -->
-        <section class="section-container bg-light-blue">
-            <h2 class="section-title">Pertanyaan Sering Diajukan</h2>
-            <div class="faq-container">
-                <div class="faq-item">
-                    <button class="faq-question">Apakah wajib memiliki sertifikat bahasa Jepang?</button>
-                    <div class="faq-answer">Untuk program SSW, Anda diwajibkan memiliki sertifikat JFT A2/JLPT N4. Namun untuk jalur Magang (Jalur Cepat), Anda bisa mulai memproses pendaftaran paralel sambil mengikuti pelatihan dasar (N5) di MANUTH JAPAN.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Berapa lama proses dari belajar hingga berangkat?</button>
-                    <div class="faq-answer">Waktu rata-rata adalah 4 hingga 8 bulan, bergantung pada program yang Anda pilih, kemampuan menyerap materi bahasa, serta jadwal turunnya Certificate of Eligibility (CoE) dari pihak imigrasi Jepang.</div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">Apakah ada batasan usia untuk mendaftar?</button>
-                    <div class="faq-answer">Idealnya kandidat berusia antara 18 hingga 35 tahun. Namun, beberapa bidang kerja seperti Keperawatan (Kaigo) seringkali lebih fleksibel terhadap batasan usia atas jika Anda lulus uji kompetensi.</div>
-                </div>
-            </div>
-        </section>
     </main>
 
     <!-- FOOTER WITH GOOGLE MAPS -->
@@ -833,528 +771,6 @@
             try {
                 const queryParams = new URLSearchParams(payload).toString();
                 const response = await fetch(`${GAS_URL}?${queryParams}`, { method: 'GET' });
-                if (!response.ok) throw new Error('Peladen Google sibuk atau menolak koneksi.');
-                const result = await response.json();
-                if (result.status === "error") throw new Error(result.message);
-                return result;
-            } catch (error) {
-                console.error("API Fetch Error:", error);
-                throw error;
-            }
-        }
-
-        function renderSpinnerSakura() {
-            return `<img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." width="60" height="60">`;
-        }
-
-        // ==========================================
-        // SISTEM LEAD MAGNET & POP-UP
-        // ==========================================
-        function triggerLeadMagnet(tipeAkses) {
-            Swal.fire({
-                title: 'Dapatkan Akses Gratis!',
-                html: `
-                    <div class="swal-form-container">
-                        <label class="swal-form-label">Nama Lengkap</label>
-                        <input type="text" id="swal-nama" class="swal2-input custom-swal-input" placeholder="Ketik nama Anda di sini..." aria-label="Nama Lengkap">
-                        <label class="swal-form-label">No. WhatsApp Aktif</label>
-                        <input type="tel" id="swal-wa" class="swal2-input custom-swal-input" placeholder="Contoh: 081234567890" aria-label="Nomor WhatsApp">
-                        <input type="text" id="swal-hp" class="hp-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    </div>
-                `,
-                background: '#FFFFFF', confirmButtonText: 'Dapatkan Akses', confirmButtonColor: '#FF8DA1', showCancelButton: true, cancelButtonText: 'Batal', cancelButtonColor: '#94A3B8', focusConfirm: false, backdrop: 'rgba(0,0,0,0.8)', customClass: { confirmButton: 'btn-cta' },
-                didOpen: () => {
-                    const popup = Swal.getPopup();
-                    popup.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter') { Swal.clickConfirm(); }
-                    });
-                },
-                preConfirm: () => {
-                    if (document.getElementById('swal-hp').value !== '') return false;
-                    const nama = document.getElementById('swal-nama').value.trim(); 
-                    const waInput = document.getElementById('swal-wa'); 
-                    let wa = waInput.value.replace(/[^0-9]/g, ''); 
-                    if (!nama || !wa) { Swal.showValidationMessage('Nama dan No. WhatsApp wajib diisi!'); return false; }
-                    if (!/^(08|62|8)[0-9]{8,}$/.test(wa)) { 
-                        waInput.classList.remove('shake-error');
-                        void waInput.offsetWidth; 
-                        waInput.classList.add('shake-error'); 
-                        Swal.showValidationMessage('Gunakan format valid (Misal: 0813 / 62813).'); 
-                        return false; 
-                    }
-                    Swal.getConfirmButton().disabled = true;
-                    return { action: 'register', nama: nama, wa: wa, tipe: tipeAkses };
-                }
-            }).then((result) => { 
-                if (result.isConfirmed && result.value) { 
-                    if(typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': tipeAkses });
-                    prosesKirimData(result.value); 
-                } 
-            });
-        }
-
-        async function prosesKirimData(data) {
-            Swal.fire({ title: 'Memproses Data...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-            try {
-                await fetchAPI(data);
-                if(typeof fbq === 'function') fbq('track', 'Lead');
-
-                Swal.fire({ icon: 'success', title: 'Berhasil!', text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`, confirmButtonText: 'Buka Sekarang', confirmButtonColor: '#FF8DA1' }).then(() => {
-                    if (data.tipe === 'apps') { 
-                        document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" title="Aplikasi Gampang Jepang"></iframe></div>`;
-                        document.getElementById('lead-magnet-cards').scrollIntoView({ behavior: 'smooth' });
-                    } 
-                    else if (data.tipe === 'materi') { window.open('https://drive.google.com/', '_blank'); } 
-                    else if (data.tipe === 'brosur') { window.open('https://drive.google.com/file/d/1K0beKtHEjljeYfWngaPDSS1F3h1m17dc/view?usp=sharing', '_blank'); }
-                });
-            } catch (error) { Swal.fire('Kesalahan', error.message, 'error'); }
-        }
-
-        // ==========================================
-        // AUTO POP UP BROSUR (12 DETIK)
-        // ==========================================
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!sessionStorage.getItem('brosur_offered') && !sessionStorage.getItem('manuth_crm_token')) {
-                setTimeout(() => {
-                    if (!Swal.isVisible()) {
-                        Swal.fire({
-                            title: 'Tertarik ke Jepang?',
-                            text: 'Unduh Brosur Resmi MANUTH JAPAN 2026 yang berisi detail program, biaya, dan fasilitas.',
-                            imageUrl: 'logo 1.webp',
-                            imageWidth: 100,
-                            showCancelButton: true,
-                            confirmButtonColor: '#FF8DA1',
-                            cancelButtonColor: '#94A3B8',
-                            confirmButtonText: 'Ya, Unduh Gratis',
-                            cancelButtonText: 'Nanti Saja',
-                            customClass: { confirmButton: 'btn-cta' }
-                        }).then((result) => {
-                            sessionStorage.setItem('brosur_offered', 'true');
-                            if (result.isConfirmed) triggerLeadMagnet('brosur');
-                        });
-                    }
-                }, 12000);
-            }
-        });
-
-        // ==========================================
-        // SISTEM CRM & OTORISASI ADMIN
-        // ==========================================
-        let clickCount = 0; let clickTimer;
-        document.getElementById('secret-trigger').addEventListener('click', function() {
-            clickCount++;
-            if (clickCount === 1) { clickTimer = setTimeout(() => { clickCount = 0; }, 2000); }
-            if (clickCount >= 5) { clearTimeout(clickTimer); clickCount = 0; if(!sessionStorage.getItem('manuth_crm_token')) bukaPintuRahasia(); }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            let savedPin = sessionStorage.getItem('manuth_crm_token');
-            if (savedPin) { 
-                document.getElementById('crm-overlay').style.display = 'block';
-                document.getElementById('crm-dashboard-content').style.display = 'none';
-                document.getElementById('crm-loading-container').style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                prosesLoginCRM(savedPin, true); 
-            }
-        });
-
-        function bukaPintuRahasia() {
-            Swal.fire({ 
-                title: 'Otorisasi Admin', 
-                html: '<input type="password" id="swal-pin" class="swal2-input custom-swal-input pin-swal-input" placeholder="••••••" aria-label="PIN">',
-                confirmButtonText: 'Akses CRM', confirmButtonColor: '#0A2540',
-                customClass: { popup: 'swal2-popup', confirmButton: 'btn-cta' },
-                didOpen: () => {
-                    const pinInput = document.getElementById('swal-pin');
-                    pinInput.focus();
-                    pinInput.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter') { Swal.clickConfirm(); }
-                    });
-                },
-                preConfirm: () => {
-                    const pin = document.getElementById('swal-pin').value;
-                    if (!pin) { Swal.showValidationMessage('PIN tidak boleh kosong'); return false; }
-                    return pin;
-                }
-            }).then(result => { if (result.isConfirmed) prosesLoginCRM(result.value, false); });
-        }
-
-        async function prosesLoginCRM(pinInput, isAutoLogin) {
-            if(!isAutoLogin) Swal.fire({ title: 'Mengautentikasi...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-            try {
-                const response = await fetchAPI({ action: 'login', pin: pinInput });
-                sessionStorage.setItem('manuth_crm_token', pinInput);
-                renderCRM(response.data);
-                if(!isAutoLogin) Swal.close();
-            } catch (error) {
-                sessionStorage.removeItem('manuth_crm_token');
-                tutupCRM(true);
-                if(!isAutoLogin) Swal.fire('Akses Ditolak', error.message, 'error');
-            }
-        }
-
-        function muatDataCRM(isManualRefresh = false) {
-            let savedPin = sessionStorage.getItem('manuth_crm_token');
-            if (savedPin) {
-                if(isManualRefresh) Swal.fire({ title: 'Menyegarkan Data...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-                prosesLoginCRM(savedPin, !isManualRefresh);
-            }
-        }
-
-        function renderCRM(leads) {
-            const grid = document.getElementById('crm-grid');
-            grid.innerHTML = '';
-            
-            let total = leads.length;
-            let pendingCount = 0;
-            let selesaiCount = 0;
-
-            if(total === 0) { grid.innerHTML = '<p style="text-align:center; font-size: 18px; grid-column: 1 / -1; font-weight: 600; color: var(--slate-grey); padding: 50px;">Belum ada data masuk.</p>'; }
-
-            leads.forEach(lead => {
-                let rawWA = String(lead.wa).replace(/[^0-9]/g, '');
-                let waFormat = rawWA;
-                
-                if (rawWA.startsWith('8')) { waFormat = '62' + rawWA; } 
-                else if (rawWA.startsWith('08')) { waFormat = '62' + rawWA.substring(1); } 
-                else if (rawWA.startsWith('62')) { waFormat = rawWA; }
-
-                let waPesan = `Konnichiwa ${lead.nama}! Terima kasih sudah mengunduh materi dari MANUTH JAPAN. Jika ada konsultasi gratis tentang program kerja di Jepang, silakan balas pesan ini ya! 🌸`;
-                let waLink = `https://wa.me/${waFormat}?text=${encodeURIComponent(waPesan)}`;
-                
-                let isSelesai = lead.status === 'Sudah Di-Follow Up';
-                if(isSelesai) selesaiCount++; else pendingCount++;
-
-                let cardClass = isSelesai ? 'crm-data-card selesai' : 'crm-data-card';
-                let badgeHTML = isSelesai ? '<span class="status-badge badge-selesai"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Selesai</span>' : '<span class="status-badge badge-pending"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Pending</span>';
-                let checkDisabled = isSelesai ? 'disabled' : '';
-                let checkIcon = isSelesai ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>' : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
-
-                grid.innerHTML += `
-                    <div class="${cardClass}" id="card-${lead.row}">
-                        ${badgeHTML}
-                        <div>
-                            <div class="crm-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${lead.tanggal}</div>
-                            <h4>${lead.nama}</h4>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +${waFormat}</div>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Modul: ${lead.tipe}</div>
-                        </div>
-                        <div class="crm-actions">
-                            <a href="${waLink}" target="_blank" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-            Konsultasi WA
-        </a>
-        <button class="btn-cta" onclick="gtag('event', 'click', { 'event_category': 'navigation', 'event_label': 'Mobile Sticky Brosur' }); triggerLeadMagnet('brosur');">Unduh Brosur</button>
-    </div>
-
-    <!-- FLOATING WA BUTTON (Hanya Desktop) -->
-    <a href="https://wa.me/6281339760265?text=Halo%20MANUTH%20JAPAN,%20saya%20ingin%20konsultasi%20program%20kerja%20ke%20Jepang." class="floating-wa" target="_blank" rel="noopener noreferrer" aria-label="Hubungi Admin MANUTH JAPAN via WhatsApp" onclick="gtag('event', 'click', { 'event_category': 'whatsapp', 'event_label': 'Floating WA Button' });">
-        <div class="wa-pulse"></div>
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    </a>
-
-    <!-- HIDDEN CRM OVERLAY -->
-    <div class="crm-overlay" id="crm-overlay" aria-hidden="true">
-        <div class="crm-nav">
-            <div class="crm-nav-left">
-                <img src="logo 1.webp" alt="Logo" class="crm-logo" width="60" height="60">
-                <h2 class="crm-title">Pusat Kendali Leads</h2>
-            </div>
-            <div class="crm-nav-right">
-                <button class="btn-crm-action btn-refresh" onclick="muatDataCRM(true)" aria-label="Refresh Data">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.13 15.57a10 10 0 1 0 3.43-11.23L2.5 8"/></svg> Segarkan
-                </button>
-                <button class="btn-crm-action btn-logout" onclick="tutupCRM(true)" aria-label="Keluar">Keluar</button>
-            </div>
-        </div>
-        
-        <div id="crm-loading-container" style="display:none; text-align:center; padding-top: 15vh;">
-            <img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." style="width: 80px; height: 80px;" width="80" height="80">
-            <p style="margin-top: 20px; font-weight: 700; color: var(--deep-indigo); font-size: 18px;">Menyinkronkan Data Google Sheets...</p>
-        </div>
-
-        <div class="crm-dashboard" id="crm-dashboard-content">
-            <div class="crm-stats">
-                <div class="stat-card-ui total"><h4>Total Kandidat</h4><span id="stat-total">0</span></div>
-                <div class="stat-card-ui pending"><h4>Perlu Follow Up</h4><span id="stat-pending">0</span></div>
-                <div class="stat-card-ui selesai"><h4>Sudah Di-Follow Up</h4><span id="stat-selesai">0</span></div>
-            </div>
-            <div class="crm-grid" id="crm-grid"></div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
-
-        // ==========================================
-        // FUNGSI API CORE
-        // ==========================================
-        async function fetchAPI(payload) {
-            try {
-                const queryParams = new URLSearchParams(payload).toString();
-                const response = await fetch(`${GAS_URL}?${queryParams}`, { method: 'GET' });
-                if (!response.ok) throw new Error('Peladen Google sibuk atau menolak koneksi.');
-                const result = await response.json();
-                if (result.status === "error") throw new Error(result.message);
-                return result;
-            } catch (error) {
-                console.error("API Fetch Error:", error);
-                throw error;
-            }
-        }
-
-        function renderSpinnerSakura() {
-            return `<img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." width="60" height="60">`;
-        }
-
-        // ==========================================
-        // SISTEM LEAD MAGNET & POP-UP
-        // ==========================================
-        function triggerLeadMagnet(tipeAkses) {
-            Swal.fire({
-                title: 'Dapatkan Akses Gratis!',
-                html: `
-                    <div class="swal-form-container">
-                        <label class="swal-form-label">Nama Lengkap</label>
-                        <input type="text" id="swal-nama" class="swal2-input custom-swal-input" placeholder="Ketik nama Anda di sini..." aria-label="Nama Lengkap">
-                        <label class="swal-form-label">No. WhatsApp Aktif</label>
-                        <input type="tel" id="swal-wa" class="swal2-input custom-swal-input" placeholder="Contoh: 081234567890" aria-label="Nomor WhatsApp">
-                        <input type="text" id="swal-hp" class="hp-trap" tabindex="-1" autocomplete="off" aria-hidden="true">
-                    </div>
-                `,
-                background: '#FFFFFF', confirmButtonText: 'Dapatkan Akses', confirmButtonColor: '#FF8DA1', showCancelButton: true, cancelButtonText: 'Batal', cancelButtonColor: '#94A3B8', focusConfirm: false, backdrop: 'rgba(0,0,0,0.8)', customClass: { confirmButton: 'btn-cta' },
-                didOpen: () => {
-                    const popup = Swal.getPopup();
-                    popup.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter') { Swal.clickConfirm(); }
-                    });
-                },
-                preConfirm: () => {
-                    if (document.getElementById('swal-hp').value !== '') return false;
-                    const nama = document.getElementById('swal-nama').value.trim(); 
-                    const waInput = document.getElementById('swal-wa'); 
-                    let wa = waInput.value.replace(/[^0-9]/g, ''); 
-                    if (!nama || !wa) { Swal.showValidationMessage('Nama dan No. WhatsApp wajib diisi!'); return false; }
-                    if (!/^(08|62|8)[0-9]{8,}$/.test(wa)) { 
-                        waInput.classList.remove('shake-error');
-                        void waInput.offsetWidth; 
-                        waInput.classList.add('shake-error'); 
-                        Swal.showValidationMessage('Gunakan format valid (Misal: 0813 / 62813).'); 
-                        return false; 
-                    }
-                    Swal.getConfirmButton().disabled = true;
-                    return { action: 'register', nama: nama, wa: wa, tipe: tipeAkses };
-                }
-            }).then((result) => { 
-                if (result.isConfirmed && result.value) { 
-                    if(typeof gtag === 'function') gtag('event', 'generate_lead', { 'event_category': 'engagement', 'event_label': tipeAkses });
-                    prosesKirimData(result.value); 
-                } 
-            });
-        }
-
-        async function prosesKirimData(data) {
-            Swal.fire({ title: 'Memproses Data...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-            try {
-                await fetchAPI(data);
-                if(typeof fbq === 'function') fbq('track', 'Lead');
-
-                Swal.fire({ icon: 'success', title: 'Berhasil!', text: `Terima kasih ${data.nama}, akses Anda telah disiapkan.`, confirmButtonText: 'Buka Sekarang', confirmButtonColor: '#FF8DA1' }).then(() => {
-                    if (data.tipe === 'apps') { 
-                        document.getElementById('lead-magnet-cards').innerHTML = `<div style="width:100%; height:600px; border-radius:16px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.1); grid-column: 1 / -1;"><iframe src="https://gampangjepang.netlify.app/" width="100%" height="100%" frameborder="0" title="Aplikasi Gampang Jepang"></iframe></div>`;
-                        document.getElementById('lead-magnet-cards').scrollIntoView({ behavior: 'smooth' });
-                    } 
-                    else if (data.tipe === 'materi') { window.open('https://drive.google.com/', '_blank'); } 
-                    else if (data.tipe === 'brosur') { window.open('https://drive.google.com/file/d/1K0beKtHEjljeYfWngaPDSS1F3h1m17dc/view?usp=sharing', '_blank'); }
-                });
-            } catch (error) { Swal.fire('Kesalahan', error.message, 'error'); }
-        }
-
-        // ==========================================
-        // AUTO POP UP BROSUR (12 DETIK)
-        // ==========================================
-        window.addEventListener('DOMContentLoaded', () => {
-            if (!sessionStorage.getItem('brosur_offered') && !sessionStorage.getItem('manuth_crm_token')) {
-                setTimeout(() => {
-                    if (!Swal.isVisible()) {
-                        Swal.fire({
-                            title: 'Tertarik ke Jepang?',
-                            text: 'Unduh Brosur Resmi MANUTH JAPAN 2026 yang berisi detail program, biaya, dan fasilitas.',
-                            imageUrl: 'logo 1.webp',
-                            imageWidth: 100,
-                            showCancelButton: true,
-                            confirmButtonColor: '#FF8DA1',
-                            cancelButtonColor: '#94A3B8',
-                            confirmButtonText: 'Ya, Unduh Gratis',
-                            cancelButtonText: 'Nanti Saja',
-                            customClass: { confirmButton: 'btn-cta' }
-                        }).then((result) => {
-                            sessionStorage.setItem('brosur_offered', 'true');
-                            if (result.isConfirmed) triggerLeadMagnet('brosur');
-                        });
-                    }
-                }, 12000);
-            }
-        });
-
-        // ==========================================
-        // SISTEM CRM & OTORISASI ADMIN
-        // ==========================================
-        let clickCount = 0; let clickTimer;
-        document.getElementById('secret-trigger').addEventListener('click', function() {
-            clickCount++;
-            if (clickCount === 1) { clickTimer = setTimeout(() => { clickCount = 0; }, 2000); }
-            if (clickCount >= 5) { clearTimeout(clickTimer); clickCount = 0; if(!sessionStorage.getItem('manuth_crm_token')) bukaPintuRahasia(); }
-        });
-
-        window.addEventListener('DOMContentLoaded', () => {
-            let savedPin = sessionStorage.getItem('manuth_crm_token');
-            if (savedPin) { 
-                document.getElementById('crm-overlay').style.display = 'block';
-                document.getElementById('crm-dashboard-content').style.display = 'none';
-                document.getElementById('crm-loading-container').style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                prosesLoginCRM(savedPin, true); 
-            }
-        });
-
-        function bukaPintuRahasia() {
-            Swal.fire({ 
-                title: 'Otorisasi Admin', 
-                html: '<input type="password" id="swal-pin" class="swal2-input custom-swal-input pin-swal-input" placeholder="••••••" aria-label="PIN">',
-                confirmButtonText: 'Akses CRM', confirmButtonColor: '#0A2540',
-                customClass: { popup: 'swal2-popup', confirmButton: 'btn-cta' },
-                didOpen: () => {
-                    const pinInput = document.getElementById('swal-pin');
-                    pinInput.focus();
-                    pinInput.addEventListener('keydown', (e) => {
-                        if (e.key === 'Enter') { Swal.clickConfirm(); }
-                    });
-                },
-                preConfirm: () => {
-                    const pin = document.getElementById('swal-pin').value;
-                    if (!pin) { Swal.showValidationMessage('PIN tidak boleh kosong'); return false; }
-                    return pin;
-                }
-            }).then(result => { if (result.isConfirmed) prosesLoginCRM(result.value, false); });
-        }
-
-        async function prosesLoginCRM(pinInput, isAutoLogin) {
-            if(!isAutoLogin) Swal.fire({ title: 'Mengautentikasi...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-            try {
-                const response = await fetchAPI({ action: 'login', pin: pinInput });
-                sessionStorage.setItem('manuth_crm_token', pinInput);
-                renderCRM(response.data);
-                if(!isAutoLogin) Swal.close();
-            } catch (error) {
-                sessionStorage.removeItem('manuth_crm_token');
-                tutupCRM(true);
-                if(!isAutoLogin) Swal.fire('Akses Ditolak', error.message, 'error');
-            }
-        }
-
-        function muatDataCRM(isManualRefresh = false) {
-            let savedPin = sessionStorage.getItem('manuth_crm_token');
-            if (savedPin) {
-                if(isManualRefresh) Swal.fire({ title: 'Menyegarkan Data...', html: renderSpinnerSakura(), allowOutsideClick: false, showConfirmButton: false });
-                prosesLoginCRM(savedPin, !isManualRefresh);
-            }
-        }
-
-        function renderCRM(leads) {
-            const grid = document.getElementById('crm-grid');
-            grid.innerHTML = '';
-            
-            let total = leads.length;
-            let pendingCount = 0;
-            let selesaiCount = 0;
-
-            if(total === 0) { grid.innerHTML = '<p style="text-align:center; font-size: 18px; grid-column: 1 / -1; font-weight: 600; color: var(--slate-grey); padding: 50px;">Belum ada data masuk.</p>'; }
-
-            leads.forEach(lead => {
-                let rawWA = String(lead.wa).replace(/[^0-9]/g, '');
-                let waFormat = rawWA;
-                
-                if (rawWA.startsWith('8')) { waFormat = '62' + rawWA; } 
-                else if (rawWA.startsWith('08')) { waFormat = '62' + rawWA.substring(1); } 
-                else if (rawWA.startsWith('62')) { waFormat = rawWA; }
-
-                let waPesan = `Konnichiwa ${lead.nama}! Terima kasih sudah mengunduh materi dari MANUTH JAPAN. Jika ada konsultasi gratis tentang program kerja di Jepang, silakan balas pesan ini ya! 🌸`;
-                let waLink = `https://wa.me/${waFormat}?text=${encodeURIComponent(waPesan)}`;
-                
-                let isSelesai = lead.status === 'Sudah Di-Follow Up';
-                if(isSelesai) selesaiCount++; else pendingCount++;
-
-                let cardClass = isSelesai ? 'crm-data-card selesai' : 'crm-data-card';
-                let badgeHTML = isSelesai ? '<span class="status-badge badge-selesai"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg> Selesai</span>' : '<span class="status-badge badge-pending"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg> Pending</span>';
-                let checkDisabled = isSelesai ? 'disabled' : '';
-                let checkIcon = isSelesai ? '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>' : '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>';
-
-                grid.innerHTML += `
-                    <div class="${cardClass}" id="card-${lead.row}">
-                        ${badgeHTML}
-                        <div>
-                            <div class="crm-meta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> ${lead.tanggal}</div>
-                            <h4>${lead.nama}</h4>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg> +${waFormat}</div>
-                            <div class="crm-detail"><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Modul: ${lead.tipe}</div>
-                        </div>
-                        <div class="crm-actions">
-                            <a href="${waLink}" target="_blank" class="btn-wa"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-    </a>
-
-    <!-- HIDDEN CRM OVERLAY -->
-    <div class="crm-overlay" id="crm-overlay" aria-hidden="true">
-        <div class="crm-nav">
-            <div class="crm-nav-left">
-                <img src="logo 1.webp" alt="Logo" class="crm-logo" width="60" height="60">
-                <h2 class="crm-title">Pusat Kendali Leads</h2>
-            </div>
-            <div class="crm-nav-right">
-                <button class="btn-crm-action btn-refresh" onclick="muatDataCRM(true)" aria-label="Refresh Data">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.5 2v6h-6M2.13 15.57a10 10 0 1 0 3.43-11.23L2.5 8"/></svg> Segarkan
-                </button>
-                <button class="btn-crm-action btn-logout" onclick="tutupCRM(true)" aria-label="Keluar">Keluar</button>
-            </div>
-        </div>
-        
-        <div id="crm-loading-container" style="display:none; text-align:center; padding-top: 15vh;">
-            <img src="logo 1.webp" class="custom-sakura-spinner" alt="Loading..." style="width: 80px; height: 80px;" width="80" height="80">
-            <p style="margin-top: 20px; font-weight: 700; color: var(--deep-indigo); font-size: 18px;">Menyinkronkan Data Google Sheets...</p>
-        </div>
-
-        <div class="crm-dashboard" id="crm-dashboard-content">
-            <div class="crm-stats">
-                <div class="stat-card-ui total"><h4>Total Kandidat</h4><span id="stat-total">0</span></div>
-                <div class="stat-card-ui pending"><h4>Perlu Follow Up</h4><span id="stat-pending">0</span></div>
-                <div class="stat-card-ui selesai"><h4>Sudah Di-Follow Up</h4><span id="stat-selesai">0</span></div>
-            </div>
-            <div class="crm-grid" id="crm-grid"></div>
-        </div>
-    </div>
-
-    <!-- JAVASCRIPT LOGIC -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        const GAS_URL = "https://script.google.com/macros/s/AKfycbxIkfE5eE_Fh6Hy-AhOHI2V0ZzC6CZQ14u8NGRgziSZnuDcWf-lhx__-cAD0HDDOX9E/exec";
-
-        // ==========================================
-        // FUNGSI API CORE
-        // ==========================================
-        async function fetchAPI(payload) {
-            try {
-                // ANTI-CACHE GOOGLE: Tambahkan timestamp unik agar Google selalu memberikan data paling baru!
-                payload._t = new Date().getTime(); 
-                const queryParams = new URLSearchParams(payload).toString();
-                const response = await fetch(`${GAS_URL}?${queryParams}`, { 
-                    method: 'GET',
-                    headers: {
-                        'Cache-Control': 'no-cache, no-store, must-revalidate',
-                        'Pragma': 'no-cache',
-                        'Expires': '0'
-                    }
-                });
                 if (!response.ok) throw new Error('Peladen Google sibuk atau menolak koneksi.');
                 const result = await response.json();
                 if (result.status === "error") throw new Error(result.message);
